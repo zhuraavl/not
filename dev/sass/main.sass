@@ -1,0 +1,672 @@
+// variabiles
+@import "variables/color.sass"
+@import "variables/media.sass"
+@import "variables/typography.sass"
+@import "variables/space.sass"
+@import "variables/utils.sass"
+@import "variables/control.sass"
+@import "variables/button.sass"
+@import "variables/css-class.sass"
+
+// elements
+@import "elements/footer.sass"
+@import "elements/header.sass"
+@import "elements/product-tumb.sass"
+
+
+
+// vendor
+@import "vendor/normalize.css"
+@import "vendor/lightslider.css"
+@import "vendor/chocolat.css"
+
+
+// http://flexboxgrid.com
+@import "vendor/flexboxgrid.min.css"
+
+
+
+
+
+// Main
+body
+  font-size: 14px
+  font-family: $book
+
+    
+// Pages
+
+.main-page
+  
+    
+
+  header
+    background: #fff
+  section
+    position: relative
+    height: 100vh
+    .info
+      position: absolute
+      z-index: 100
+      width: 500px
+      height: 200px
+      text-align: center
+      top: 10vh
+      left: 0
+      bottom: 0
+      right: 0
+      margin: auto
+      color: #fff
+      @include mobil
+        width: 300px
+        top: 0
+        bottom: 0
+      h2
+        font-size: 24px
+        font-family: $book
+        letter-spacing: .1em
+        text-transform: uppercase
+      p
+        @include mobil
+          font-size: 16px
+    .lslide
+      position: relative
+      z-index: 10000
+      @include mobil
+      &:before
+        content: ''
+        position: absolute
+        z-index: 100
+        width: 400px
+        height: 2px
+        background: #000
+        bottom: 100px
+        left: 0
+        right: 0
+        margin: auto
+        transition: all 6s
+        @include mobil
+          width: 300px
+          display: none
+      &:after
+        content: ''
+        position: absolute
+        z-index: 100
+        width: 0
+        height: 2px
+        background: #fff
+        bottom: 100px
+        left: 0
+        right: 0
+        margin: auto
+        transition: all 6s ease-in
+        @include mobil
+          display: none
+      &.active:after
+        width: 300px
+  .lSPager.lSpg
+    position: absolute
+    bottom: 150px
+    text-align: center
+    width: 100%
+    left: 0
+    @include mobil
+      bottom: 25px
+      text-align: right
+      padding-right: 1em
+    li
+      a
+        display: inline
+        background: transparent
+        text-decoration: none
+        overflow: visible
+        position: relative
+        color: #fff
+        &:after
+          content: ''
+          position: absolute
+          width: 1px
+          height: 0
+          background: #fff
+          bottom: 20px
+          left: 4px
+          display: block
+          transition: all .5s ease-in-out
+      &.active
+        a
+          background: none
+          &:after
+            height: 15px
+  .bg
+    width: 100%
+    height: 100vh
+    background-size: cover
+    background-position: center
+    z-index: 1
+    position: relative
+    &:after
+      content: ''
+      background: rgba(0, 0, 0, 0.4)
+      position: absolute
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      z-index: 1
+  .lSAction > a
+    background: trasnparent !important
+    color: transprent
+  .lSAction > a:after, .lSAction > a:before
+    background-image: url(../media/images/arroww.svg)
+  footer, .scroll-top
+    display: none
+        
+        
+// catalog page      
+
+.catalog-page
+  padding-top: 100px
+  
+  .catalog-filter
+    position: fixed
+    padding: 0
+    margin: 0
+    list-style: none
+    z-index: 5
+    height: 350px
+    top: 0
+    bottom: 0
+    margin: auto
+    @include mobil
+      position: relative
+      top: 0
+      padding-bottom: 50px
+    li
+      a, label
+        padding: 0
+        letter-spacing: 1px
+        display: block
+        text-decoration: none
+        color: #000
+        transition: opacity .3s cubic-bezier(0.19, 1, 0.22, 1)
+        text-transform: uppercase
+        font-size: 14px
+        &:hover
+          opacity: 1
+      &.sale
+        a
+          padding: $s-m 0
+          color: red
+      
+      &.filters
+        > a
+          text-transform: uppercase
+          letter-spacing: 1px
+          font-family: $book
+          font-size: 12px
+          margin-bottom: 3px
+          &:after
+            content: '+'
+            padding-left: $s-s
+          &.active 
+            &:after
+              content: '-'
+          &.active + ul
+            display: block
+      &.brand-filter
+        .drop-filter
+          height: 180px
+          overflow-y: scroll
+      &.reset
+        > button
+          padding: 0
+          margin: 0
+          color: #555
+          border: 0
+          background: none
+          text-transform: uppercase
+          padding: $s-m 0
+          font-size: 12px
+          letter-spacing: 1px
+          
+      p
+        text-transform: uppercase
+        letter-spacing: 1px
+        font-size: 12px
+  .drop-filter
+    list-style: none
+    padding: 0 0 0 10px
+    margin: 10px 0
+    display: none
+    position: relative
+    
+    li
+      margin-bottom: 2px
+      a, label
+        font-size: 12px
+      label
+        position: relative
+        cursor: pointer
+        &:before
+          content: ''
+          display: inline-block
+          border: 1px solid
+          margin-right: .5em
+        &:after
+          content: ''
+          position: absolute
+          background: #fff
+      input
+        opacity: 0
+        position: absolute
+        &[type=radio]
+          & + label:before
+            width: 8px
+            height: 8px
+            border-radius: 100%
+          & + label:after
+            border-radius: 100%
+            width: 4px
+            height: 4px
+            left: 3px
+            top: 5px
+        &[type=checkbox]
+          & + label:before
+            width: 12px
+            height: 12px
+          & + label:after
+            width: 8px
+            height: 8px
+            left: 3px
+            top: 3px
+        &:checked + label:after
+          background: #000
+        
+        
+        
+    
+    
+    
+        
+        
+// product page
+.product-page
+  padding-top: 100px
+  .product-info
+    text-align: left
+    a
+      margin-top: $s-m
+      margin-bottom: $s-xl
+      width: 200px
+      font-family: $book
+      font-size: $s-m
+      border: 1px solid
+        
+  .product-images
+    a.btn.block
+      position: absolute
+      width: 200px
+      left: 0
+      top: $s-l
+      
+        
+// news page
+.news-page
+  padding-top: 100px
+  .news-item
+    padding-bottom: 100px
+    text-decoration: none
+    color: #000
+    display: block
+    text-align: center
+    background: #fff
+    z-index: 10
+    img
+      width: 100%
+      display: block
+      margin-bottom: 2em
+    h2
+      font-size: 18px
+      text-transform: uppercase
+      font-family: $book
+      font-weight: 100
+      letter-spacing: 1px
+    label
+      color: #000
+      letter-spacing: 1px
+      font-size: 10px
+    span
+      &:after
+        content: ''
+        position: fixed
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: rgba(0, 0, 0, 0.2)
+        z-index: -1
+        opacity: 0
+        visibility: hidden
+        transition: all .3s ease-in-out
+        transition-delay: .4s
+      &:hover:after
+        opacity: 1
+        visibility: visible
+  
+// pagination
+.pagination
+  padding: 50px 0 100px
+  text-align: center
+  ul
+    margin: 0
+    padding: 0
+    list-style-type: none
+  li
+    display: inline-block
+    a
+      padding: 10px 18px
+      color: #222
+      text-decoration: none
+      border-bottom: 2px solid #fff
+    &:hover
+      a
+        border-bottom: 2px solid #ccc
+    &.active
+      a
+        font-weight: bold
+        border-bottom: 2px solid #000000
+
+      
+      
+// news item page
+.news-item-page
+  padding-top: 100px
+  .news-title
+    h6
+      margin-top: 0
+  .news-description
+    p
+      font-size: 18px
+  .news-hero
+    position: relative
+    height: calc(100vh - 100px)
+    background: #000
+    padding-top: 200px
+    .row
+      position: relative
+      z-index: 10
+      color: #fff
+    .bg
+      top: 0
+      left: 0
+      position: absolute
+      width: 100%
+      height: 100%
+      background-size: cover
+      z-index: 1
+      opacity: .5
+  
+
+// store page
+.store-page
+  padding-top: 100px
+  .store-item
+    margin-bottom: 100px
+    text-align: center
+    h2
+      font-size: 18px
+      text-transform: uppercase
+      font-family: $book
+      font-weight: 100
+      letter-spacing: 1px
+      margin-top: 2em
+    p
+      margin: 0
+      text-transform: uppercase
+  .store-partners
+    padding: 50px 0 100px
+    border-top: 1px solid #000
+    text-align: center
+    img
+      width: 30px
+      display: block
+      margin: auto
+      margin-bottom: 1em
+    h3
+      margin: 0
+      text-transform: uppercase
+      font-size: 18px
+      letter-spacing: 1px
+      font-weight: 100
+      font-family: $book
+    p
+      text-transform: uppercase
+  .modal-box
+    position: fixed
+    overflow: hidden
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 10000
+    opacity: 0
+    visibility: hidden
+    .open-map
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      background: rgba(0, 0, 0, 0.5)
+      z-index: -1
+      cursor: pointer
+      &:after
+        content: '×'
+        position: absolute
+        right: 2%
+        top: 2%
+        color: #fff
+        font-size: 50px
+        display: block
+        z-index: 1
+    &.show
+      opacity: 1
+      visibility: visible
+  #map-kiev, #map-odessa
+    height: 80%
+    width: 90%
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto
+    left: 0
+    right: 0
+    
+    
+    
+    
+    
+//   brands page
+.brands-page
+  main
+  .brands-list > .brand-item
+    text-align: center
+    overflow: hidden
+    position: relative
+    background: #fff
+    @include mobil
+      padding: 20px 0
+    .slider-brand
+      padding: 0
+      margin: 0
+      .pic
+        height: 95vh
+        background-size: cover
+        background-position: center
+        @include mobil
+          height: 350px
+          margin-top: 50px
+    .text-content
+      width: 300px
+      height: 300px
+      margin: auto
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      @include mobil
+        padding-top: 50px
+        position: relative
+        height: auto
+      h4
+        font-weight: 300
+        font-size: 24px
+        margin: 0
+        letter-spacing: 1px
+        a
+          text-decoration: none
+      span
+        font-size: 10px
+        color: #999
+        text-transform: uppercase
+        letter-spacing: 1px
+      p
+        font-size: 16px
+      .btn
+        &:after
+          content: ''
+          position: fixed
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          background: rgba(0, 0, 0, 0.2)
+          z-index: -1
+          opacity: 0
+          visibility: hidden
+          transition: all .3s ease-in-out
+          transition-delay: .4s
+        &:hover:after
+          opacity: 1
+          visibility: visible
+    .col-md-6
+      position: relative
+      
+      
+  
+  .lSSlideOuter .lSPager.lSpg
+    botton: 30px
+    position: relative
+    li
+      a
+        display: inline
+        background: transparent
+        text-decoration: none
+        overflow: visible
+        position: relative
+        &:after
+          content: ''
+          position: absolute
+          width: 1px
+          height: 0
+          background: #000
+          bottom: 20px
+          left: 4px
+          display: block
+          transition: all .5s ease-in-out
+      &.active a:after
+        height: 15px
+
+    
+          
+      
+  .brand-links
+    
+    display: block
+    list-style: none
+    padding: 0
+    margin: 0
+    @include mobil
+      padding-top: 50px
+      padding-bottom: 50px
+    li
+      margin-bottom: .5em
+      a
+        display: block
+        font-size: 14px
+        text-transform: uppercase
+        letter-spacing: 1px
+        text-decoration: none
+    
+    
+    
+  .brands-box
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh
+    min-height: 500px
+    padding: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    @include mobil
+      position: relative
+      height: auto
+      display: block
+      margin-top: 50px
+
+
+  .brands-list
+    margin-left: 16.6%
+    @include medium
+      margin-left: 0
+    
+
+      
+      
+.terms-page
+  main
+    padding-top: 100px
+    text-align: center
+    h2
+      font-size: 28px
+      letter-spacing: 1px
+      text-transform: uppercase
+    form
+      padding-top: 30px
+      padding-bottom: 100px
+      label
+        text-align: left
+        display: block
+        font-size: 10px
+        text-transform: uppercase
+        letter-spacing: 1px
+        color: #999
+      input
+        width: 100%
+        display: block
+        border: 1px solid #000
+        padding: .5em
+        font-size: 18px
+      textarea
+        padding: .5em
+        border: 1px solid #000
+        display: block
+        width: 100%
+      .send
+        background: #000
+        width: 150px
+        font-size: 12px
+        text-transform: uppercase
+        letter-spacing: 1px
+        padding: .75em 1.5em
+        color: #fff
+        border: 0
+        box-shadow: none
+        margin: auto
+        margin-top: 20px
+        border-radius: 50px
+        

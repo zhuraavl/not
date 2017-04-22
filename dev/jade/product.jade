@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Product
+    link(rel='stylesheet', href='css/main.css')
+    
+  body.product-page
+    include includes/header
+    
+    main
+      section
+        .container-fluid
+          .row
+            
+                
+                
+            .col-md-9.relative.product-images
+              a.btn.block(href="catalog.html") &#8668; Вернуться в каталог
+              img(src="media/images/p11.jpg", alt="")
+              img(src="media/images/p12.jpg", alt="")
+              img(src="media/images/p13.jpg", alt="")
+              img(src="media/images/p14.jpg", alt="")
+              .space-100
+            .col-md-3
+              .product-info
+                h3 WILD WILD 2 B4
+                h6.price 500 грн
+                p Titanium frame in gold
+                p Flat silver mirrored lenses
+                p Adjustable metallic golden nose pads
+                p 100% UV Protection
+                a.btn.block(href="store.html") Искать магазин
+                h6.size-info Размеры
+                p Frame : front 141 mm - side 145 mm 
+                p Lens : width 60	mm - height 56 mm 
+                p Material : titanium
+    
+    
+    include includes/footer
+              
+              
+    
+    
+    
+    
+    
+    
+    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="js/min/app-min.js")
+    
+    
+  

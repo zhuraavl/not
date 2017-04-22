@@ -1,0 +1,57 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel='stylesheet', href='css/main.css')
+    
+  body.terms-page
+    include includes/header
+    
+    main
+      section
+        .container-fluid
+          .row
+            .col-xs-12
+              h2 Сотрудничество
+              p Свяжитесь с нами чтобы узнать больше, или чтобы больше узнали мы.
+              br
+              h4 NOT FOR EVERYONE
+              p 3100 West Cary Street Richmond, Virginia 23221
+              p P: 804.355.4383   F: 804.367.7901
+              p Store Hours
+              p Monday–Saturday 11am–7pm ET
+              p Sunday 11am–6pm ET
+              .row
+                .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12
+                  form(action="")
+                    .row
+                      .col-sm-6.col-md-6.col-xs-12
+                        label Имя
+                        input(type="text")
+                      .col-sm-6.col-md-6.col-xs-12
+                        label Email
+                        input(type="email")
+                      .col-md-12.col-xs-12.col-sm-12
+                        br
+                        label Сообщение
+                        textarea(name="message", rows="5")
+                        input.send(type="submit")
+    
+    
+    include includes/footer
+              
+              
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  

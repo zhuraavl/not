@@ -1,0 +1,209 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Catalog
+    link(rel='stylesheet', href='css/main.css')
+    
+  body.catalog-page
+    include includes/header
+    
+    main.vs-section
+      section
+        .container-fluid
+          .row
+            .col-md-2.col-sm-3.col-xs-12
+              ul.catalog-filter
+                li
+                  a(href="") New Collection
+                li
+                  a(href="") Очки
+                li
+                  a(href="") Оптика
+                li
+                  a(href="") Линзы
+                li.sale
+                  a(href="") Sale
+                li
+                  p Фильтры
+                li.filters
+                  a(href="") Пол
+                  ul.drop-filter
+                    li
+                      a(href="") Мужской
+                    li
+                      a(href="") Женский
+                    li
+                      a(href="") Оба
+                li.filters.brand-filter
+                  a(href="") Бренд
+                  ul.drop-filter
+                    li
+                      input#o1(type="checkbox", name="brend")
+                      label(for="o1") Бренд 1
+                    li
+                      input#o2(type="checkbox", name="brend")
+                      label(for="o2") Бренд 2
+                    li
+                      input#o3(type="checkbox", name="brend")
+                      label(for="o3") Бренд 3
+                    li
+                      input#o4(type="checkbox", name="brend")
+                      label(for="o4") Бренд 4
+                    li
+                      input#o5(type="checkbox", name="brend")
+                      label(for="o5") Бренд 5
+                    li
+                      input#o6(type="checkbox", name="brend")
+                      label(for="o6") Бренд 6
+                    li
+                      input#o7(type="checkbox", name="brend")
+                      label(for="o7") Бренд 7
+                    li
+                      input#o8(type="checkbox", name="brend")
+                      label(for="o8") Бренд 8
+                    li
+                      input#o9(type="checkbox", name="brend")
+                      label(for="o9") Бренд 9
+                    li
+                      input#o10(type="checkbox", name="brend")
+                      label(for="o10") Бренд 10
+                    li
+                      input#o11(type="checkbox", name="brend")
+                      label(for="o11") Бренд 11
+                    
+                li.filters
+                  a(href="") Материал оправы
+                  ul.drop-filter
+                    li
+                      a(href="") Металлическая оправа
+                    li
+                      a(href="") Платиковая оправа
+                    li
+                      a(href="") Стеклянная оправа
+                li.filters
+                  a(href="") Линза
+                  ul.drop-filter
+                    li
+                      input#plastic(type="radio", name="linza")
+                      label(for="plastic") Пластик
+                      
+                    li
+                      input#steklo(type="radio", name="linza")
+                      label(for="steklo") Стекло
+                      
+                li.filters
+                  a(href="") Стоимость
+                  ul.drop-filter
+                    li
+                      a(href="") Металлическая оправа
+                    li
+                      a(href="") Платиковая оправа
+                    li
+                      a(href="") Стеклянная оправа
+                      
+                li.reset
+                  button Сбросить
+            .col-md-10.col-sm-9.col-xs-12
+              .row.product-grid
+                .col-md-6.col-sm-12.col-xs-12
+                  .product-item
+                    ul.product-slider
+                      li
+                        a.chocolat-image(href="media/images/n3.jpg" title="WILD WILD 2 B4")
+                          img(src="media/images/n3.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/n2.jpg" title="WILD WILD 2 B4")
+                          img(src="media/images/n2.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/n1.jpg" title="WILD WILD 2 B4")
+                          img(src="media/images/n1.jpg", alt="")
+                    .product-info
+                      h2 WILD WILD 2 B4
+                      h6.price 500 грн
+                      p Frame front 145 mm - Frame side 152 mm
+                      p Lens width 51	mm - Lens height 44 mm
+                      p  Material : acetate
+                .col-md-6.col-sm-12.col-xs-12
+                  .product-item
+                    ul.product-slider
+                      li
+                        a.chocolat-image(href="media/images/product/4.jpg" title="WILD WILD 2 B2")
+                          img(src="media/images/product/4.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/product/1.jpg" title="WILD WILD 2 B2")
+                          img(src="media/images/product/1.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/product/3.jpg" title="WILD WILD 2 B2")
+                          img(src="media/images/product/3.jpg", alt="")
+                    .product-info
+                      h2 WILD WILD 2 B4
+                      h6.price 500 грн
+                      p Frame front 145 mm - Frame side 152 mm
+                      p Lens width 51	mm - Lens height 44 mm
+                      p  Material : acetate
+                .col-md-6.col-sm-12.col-xs-12
+                  .product-item
+                    ul.product-slider
+                      li
+                        a.chocolat-image(href="media/images/product/1.jpg" title="WILD WILD 2 B3")
+                          img(src="media/images/product/1.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/product/2.jpg" title="WILD WILD 2 B3")
+                          img(src="media/images/product/2.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/product/3.jpg" title="WILD WILD 2 B3")
+                          img(src="media/images/product/3.jpg", alt="")
+                    .product-info
+                      h2 WILD WILD 2 B4
+                      h6.price 500 грн
+                      p Frame front 145 mm - Frame side 152 mm
+                      p Lens width 51	mm - Lens height 44 mm
+                      p  Material : acetate
+                .col-md-6.col-sm-12.col-xs-12
+                  .product-item
+                    ul.product-slider
+                      li
+                        a.chocolat-image(href="media/images/product/5.jpg" title="WILD WILD 2 B5")
+                          img(src="media/images/product/5.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/product/2.jpg" title="WILD WILD 2 B5")
+                          img(src="media/images/product/2.jpg", alt="")
+                      li
+                        a.chocolat-image(href="media/images/product/1.jpg" title="WILD WILD 2 B5")
+                          img(src="media/images/product/1.jpg", alt="")
+                    .product-info
+                      h4 WILD WILD 2 B4
+                      h6.price 500 грн
+                      p Frame front 145 mm - Frame side 152 mm
+                      p Lens width 51	mm - Lens height 44 mm
+                      p  Material : acetate
+              .row
+                .col-md-12.col-sm-12.col-xs-12
+                  .pagination
+                    ul
+
+                      li.active
+                        a(href="") 1
+                      li
+                        a(href="") 2
+                      li
+                        a(href="") 3
+                      li
+                        a(href="") 4
+                      li
+                        a(href="") 5
+              .space-100
+    
+    include includes/footer
+              
+              
+    
+    
+    
+    
+    
+    
+    
+  

@@ -1,0 +1,278 @@
+header
+  position: fixed
+  padding: $s-m 0
+  top: 0
+  left: 0
+  right: 0
+  background: #fff
+  z-index: 100
+  width: 100%
+  margin: auto
+  transition: top .8s ease-in-out
+  transition-delay: .3s
+  .logo
+    display: block
+    font-size: 24px
+    letter-spacing: 1px
+    font-family: $pt
+    position: relative
+    z-index: 10
+    white-space: nowrap
+    @include mobil
+      font-size: 18px
+    span
+      font-size: 8px
+      display: block
+      font-family: $book
+      text-transform: uppercase
+    &:hover
+      text-decoration: none
+  .center-menu
+    padding-top: $s-m
+  ul
+    margin: 0
+    padding: 0
+    display: flex
+    flex-direction: row
+    list-style: none
+    flex-wrap: nowrap
+    justify-content: center
+    li
+      a
+        font-size: 16px
+        padding: 0 1em
+        letter-spacing: 1px
+      &:last-child
+        a
+          padding-right: 0
+      
+  a
+    text-decoration: none
+    color: #000
+    &:hover
+      text-decoration: underline
+  .header-search
+    margin-top: 14px
+    padding-right: 30px
+    padding-left: 0
+    ul
+      display: flex
+      width: 100%
+      list-style: none
+      flex-wrap: nowrap
+      text-align: left
+      justify-content: space-between
+      li
+        a
+          font-size: 10px
+          text-transform: uppercase
+          padding: 0
+          i
+            font-size: 12px
+          
+  .open-search
+    position: absolute
+    width: 20px
+    height: 20px
+    padding: 0
+    margin: 0
+    border: 0
+    background: none
+    right: 0
+    top: 13px
+    @include medium
+      right: 70px
+    @include mobil
+      right: 45px
+      top: 6px
+  &.nav-up
+    top: -100px
+//.main-page header
+  a, label, input, button
+    color: #fff
+  .search-area input
+    border-bottom: 1px solid #fff
+
+
+.open-mobil
+  position: absolute
+  display: block
+  width: 30px
+  height: 30px
+  top: 15px
+  right: 1.6em
+  cursor: pointer
+  z-index: 10
+  display: none
+  @include mobil
+    top: 8px
+    right: 0
+  span
+    transition: all 0.5s ease
+    background: #000
+    width: 30px
+    height: 3px
+    display: block
+    &:before, &:after
+      content: ""
+      position: absolute
+      margin: 0 auto
+      background: #000
+      width: 30px
+      height: 3px
+      left: 0
+      right: 0
+      transition: all 0.5s ease
+    &:before 
+      bottom: 11px
+    &:after 
+      top: 8px
+    
+  @include medium
+    display: block
+  
+.mobil-menu
+  @include medium
+    transform: translateX(200%)
+    transition: all .3s ease-in-out
+.mobil-menu
+  @include medium
+    position: absolute
+    width: calc(100vw)
+    height: 100vh
+    background: #fff
+    right: 0
+    top: 0
+    display: block
+    padding: 0
+    padding-top: 100px
+    margin: 0
+    ul
+      display: block !important
+      width: 100%
+      text-align: center
+      a
+        padding: .5em 0
+        display: block
+        font-size: 24px
+    .header-search
+      position: absolute
+      bottom: 100px
+      width: 300px
+      left: 0
+      right: 0
+      margin: auto
+      padding: 0
+      
+      ul
+        text-align: center
+        a
+          font-size: 16px
+          color: #777
+      .search-area
+        margin-top: 30px
+    &.open
+      transform: translateX(0px)
+
+      
+      
+      
+.search-box
+  position: fixed
+  width: 100%
+  height: 100%
+  z-index: 99
+  top: 60px
+  left: 0
+  opacity: 0
+  visibility: hidden
+  transition: all .3s ease-in
+  .open-search
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 5
+    opacity: 1
+    background: #000
+  .search-content
+    padding: 0 20px
+    display: block
+    margin: auto
+    min-width: 300px
+    position: relative
+    z-index: 10
+    text-align: center
+    background: #fff
+    padding: 1em
+    transform: translateY(-300px)
+    transition: all .5s ease-in-out
+    .search-input
+      width: 100%
+      background: #fff
+      height: 50px
+      padding-right: 100px
+      outline: none
+      font-size: 16px
+      text-align: center
+      display: block
+      transition: all .5s
+      border: 0
+      border-bottom: 1px solid #ccc
+      transition: all .6s ease
+      transition-delay: .25s
+      transform: translateY(-30px)
+      opacity: 0
+    .send-search
+      display: block
+      width: 100px
+      border-radius: 25px
+      padding: .5em
+      font-size: 14px
+      background: #000
+      color: #fff
+      border: 0
+      margin: auto
+      line-height: 1
+      text-transform: uppercase
+      margin-top: 10px
+      transition: all .6s ease
+      transition-delay: .25s
+      transform: translateY(-40px)
+      opacity: 0
+    p
+      margin: 0
+      
+      transition: all .5s ease-in
+      transition-delay: .25s
+      transform: translateY(-50px)
+    ul
+      padding: .5em 0
+      margin: 0
+      list-style: none
+      transition: all .6s ease-out
+      transition-delay: .25s
+      transform: translateY(-60px)
+      opacity: 0
+      li
+        display: inline-block
+        span
+          letter-spacing: 1px
+        a, span
+          display: block
+          color: #777
+          font-size: 12px
+          font-weight: 300
+      
+        
+    
+  &.show
+    opacity: 1
+    visibility: visible
+    .search-content
+      transform: translateY(0px)
+    .search-input, .send-search, p, ul
+      opacity: 1
+      transform: translateX(0%)
+    

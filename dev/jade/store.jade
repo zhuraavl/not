@@ -1,0 +1,62 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Store
+    link(rel='stylesheet', href='css/main.css')
+    
+  body.store-page
+    include includes/header
+    
+    main
+      section
+        .container-fluid
+          .row
+            .col-md-12
+              .row
+                .col-md-6.col-md-offset-3
+                  .store-item
+                    img(src="media/images/s1.jpg", alt="")
+                    h2 Киев какой-нибудь магазин
+                    p Ул. Какая-нибудь 25, Киев, 60000
+                    p Т. +38 099 434 23 44
+                    p ПОН - ПЯТ 12:00 - 20:00 / СУБ - ВОСКР 14:00 - 18:00
+                    br
+                    button.btn.open-map.kiev показать карту
+                  .store-item
+                    img(src="media/images/s2.jpg", alt="")
+                    h2 Одесса какой-нибудь магазин
+                    p Ул. Какая-нибудь 25, Киев, 60000
+                    p Т. +38 099 434 23 44
+                    p ПОН - ПЯТ 12:00 - 20:00 / СУБ - ВОСКР 14:00 - 18:00
+                    br
+                    button.btn.open-map.odessa показать карту
+              
+                  .store-partners
+                    img(src="media/images/plus.png", alt="")
+                    h3 Сотрудничество
+                    br
+                    a.btn(href="") узнать
+                  
+        
+      .modal-box
+        .open-map
+        #map-odessa.map
+        #map-kiev.map
+    include includes/footer
+    script(src="https://maps.googleapis.com/maps/api/js")
+    script(src="js/lib/maps.js")
+         
+              
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
