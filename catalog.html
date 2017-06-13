@@ -9,13 +9,13 @@
   <body class="catalog-page">
     <header class="nav-down">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row reletive">
           <div class="col-md-3 col-sm-4 col-xs-8"><a href="index.html" class="logo">NOT FOR EVERYONE<span>Concept eyewear company </span></a></div>
-          <div class="col-md-9 col-sm-8 col-xs-4 reletive"><a href="#" class="open-mobil"><span></span></a>
+          <div class="col-md-9 col-sm-8 col-xs-4 mobil-header-box"><a href="#" class="open-mobil"><span></span></a>
             <div class="row mobil-menu">
               <div class="col-md-8 col-sm-12 col-xs-12 center-menu text-center">
                 <ul class="main-menu">
-                  <li><a href="index.html">О НАС</a></li>
+                  <li><a href="about.html">О НАС</a></li>
                   <li><a href="brands.html">БРЕНДЫ</a></li>
                   <li><a href="catalog.html">КАТАЛОГ</a></li>
                   <li><a href="news.html">ЖУРНАЛ</a></li>
@@ -143,9 +143,15 @@
                 </li>
                 <li class="filters"><a href="">Стоимость</a>
                   <ul class="drop-filter">
-                    <li><a href="">Металлическая оправа</a></li>
-                    <li><a href="">Платиковая оправа</a></li>
-                    <li><a href="">Стеклянная оправа</a></li>
+                    <div class="range-slider"><span>ОТ
+                        <input type="number" value="0" min="0" max="50000" name="min-price">	ДО
+                        <input type="number" value="30000" min="0" max="30000" name="max-price"></span>
+                      <input value="0" min="0" max="50000" step="100" type="range">
+                      <input value="50000" min="0" max="50000" step="500" type="range">
+                      <svg width="100%" height="24">
+                        <line x1="4" y1="0" x2="300" y2="0" stroke="#444" stroke-width="12" stroke-dasharray="1 28"></line>
+                      </svg>
+                    </div>
                   </ul>
                 </li>
                 <li class="reset">

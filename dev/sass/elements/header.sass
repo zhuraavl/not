@@ -138,10 +138,11 @@ header
 .mobil-menu
   @include medium
     position: absolute
-    width: calc(100vw)
+    width: 104%
     height: 100vh
     background: #fff
     right: 0
+    left: -2%
     top: 0
     display: block
     padding: 0
@@ -154,7 +155,7 @@ header
       a
         padding: .5em 0
         display: block
-        font-size: 24px
+        font-size: 16px
     .header-search
       position: absolute
       bottom: 100px
@@ -167,7 +168,8 @@ header
       ul
         text-align: center
         a
-          font-size: 16px
+          padding: .5em 0
+          font-size: 12px
           color: #777
       .search-area
         margin-top: 30px
@@ -175,7 +177,14 @@ header
       transform: translateX(0px)
 
       
-      
+.mobil-header-box
+  @include medium
+    position: absolute
+    width: 100%
+    left: 0
+    top: 0
+    z-index: 0
+    max-width: 100%
       
 .search-box
   position: fixed
@@ -195,7 +204,7 @@ header
     left: 0
     z-index: 5
     opacity: 1
-    background: #000
+    background: rgba(0, 0, 0, 0.44)
   .search-content
     padding: 0 20px
     display: block

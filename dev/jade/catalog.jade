@@ -96,12 +96,18 @@ html(lang='en')
                 li.filters
                   a(href="") Стоимость
                   ul.drop-filter
-                    li
-                      a(href="") Металлическая оправа
-                    li
-                      a(href="") Платиковая оправа
-                    li
-                      a(href="") Стеклянная оправа
+                    .range-slider
+                      span
+                        | ОТ
+                        input(type='number', value='0', min='0', max='50000', name='min-price')
+                        | 	ДО
+                        input(type='number', value='30000', min='0', max='30000', name='max-price')
+                      input(value='0', min='0', max='50000', step='100', type='range')
+                      input(value='50000', min='0', max='50000', step='500', type='range')
+                      svg(width='100%', height='24')
+                        line(x1='4', y1='0', x2='300', y2='0', stroke='#444', stroke-width='12', stroke-dasharray='1 28')
+
+
                       
                 li.reset
                   button Сбросить

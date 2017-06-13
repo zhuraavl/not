@@ -11,7 +11,7 @@
     left:0;
     top:0;
     z-index:100;
-    background-color: #000000;
+    background-color: #fff;
     
 }
 .chocolat-wrapper{
@@ -145,6 +145,7 @@
 .chocolat-wrapper .chocolat-description{
     display: inline-block;
     float: left;
+    color: #000;
 }
 
 /* no container mode*/

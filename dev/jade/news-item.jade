@@ -10,19 +10,22 @@ html(lang='en')
     include includes/header
     
     main
-      section
+      section.news-hero
+        .bg(style="background-image: url('media/images/n1.jpg')")
         .container-fluid
-          .news-hero
-            .bg(style="background-image: url('media/images/n1.jpg')")
-            .row
-              .col-md-6.col-md-offset-1.col-sm-8.col-xs-12
-                h2 Заголовок этой новости будет растягиваться до тех пор, до которых сможет
-                br
-                label 16.02.2017
+          .row
+            .col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2.col-xs-12.text-center
+              h2 Заголовок этой новости будет растягиваться до тех пор, до которых сможет
+              br
+              label 16.02.2017
+              br
+              br
+              br
+              img.up-and-down(src="media/images/down-arrow.png", alt="", width="30px")
             
             
-          
-              
+      section.news-hero-content    
+        .container-fluid      
           .row.news-description
             .col-md-6.col-md-offset-3
               h4 А здесь уже идет описание новости, строго фиксированное по ширине. Строка создает еще одну строку и еще, и еще. И так, пока не сработает ограничение в определенное количество символов. Я еще не знаю какое оно будет, но все что больше - обрезается в сабмейле новости.
@@ -67,7 +70,7 @@ html(lang='en')
     
     
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
-    script(src="js/min/app-min.js")
+    
     
     
   

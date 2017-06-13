@@ -59,6 +59,12 @@ img { max-width: 100%; }
 
 .reletive { position: relative; }
 
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+input[type="number"] { -moz-appearance: textfield; }
+
+@media (max-width: 599px) { .container-fluid { padding-left: 1em; padding-right: 1em; } }
+
 .control { display: block; position: relative; padding-left: 2em; margin-bottom: 1em; cursor: pointer; font-size: 1em; }
 
 .control input { position: absolute; z-index: -1; opacity: 0; }
@@ -133,7 +139,7 @@ img { max-width: 100%; }
 
 .text-left { text-align: left; }
 
-footer { background: #000; padding: 100px 0 120px; color: #fff; z-index: 300; position: relative; font-size: 14px; }
+footer { background: #000; padding: 100px 0 120px; color: #fff; z-index: 300; position: relative; font-size: 11px; }
 
 footer p { font-family: "Futura PT Book"; }
 
@@ -145,13 +151,13 @@ footer .scroll-top { font-size: 150px; color: #fff; text-decoration: none; text-
 
 footer .scroll-top span { font-size: 14px; display: block; }
 
-footer .social { text-align: center; padding: 0; margin: 0; display: table; width: 100%; padding-top: 130px; }
+footer .social { text-align: center; padding: 0; margin: 0; display: table; width: 100%; padding-top: 100px; }
 
 footer .social li { display: table-cell; }
 
 footer .social li a { display: block; color: #fff; }
 
-footer .subscribe-box { position: relative; margin-top: 20px; z-index: 10; margin-bottom: 55px; }
+footer .subscribe-box { position: relative; margin-top: 20px; z-index: 10; margin-bottom: 16px; }
 
 footer .subscribe-box input { box-sizing: border-box; display: block; width: 100%; background: #fff; border: 0; box-shadow: none; outline: none; padding: 2em; font-size: 14px; padding-right: 150px; }
 
@@ -161,7 +167,7 @@ footer .copyright { margin-top: 20px; }
 
 footer .copyright p { font-size: 10px; color: #999; text-transform: uppercase; text-align: center; letter-spacing: 1px; }
 
-.scroll-top { position: fixed; bottom: 5%; right: 3%; z-index: 9999; text-align: center; color: #999; text-decoration: none; font-size: 35px; }
+.scroll-top { position: fixed; bottom: 5%; right: 3%; z-index: 999; text-align: center; color: #999; text-decoration: none; font-size: 35px; }
 
 .scroll-top span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -219,18 +225,20 @@ header.nav-up { top: -100px; }
 
 @media (max-width: 1200px) { .mobil-menu { -webkit-transform: translateX(200%); transform: translateX(200%); -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; } }
 
-@media (max-width: 1200px) { .mobil-menu { position: absolute; width: calc(100vw); height: 100vh; background: #fff; right: 0; top: 0; display: block; padding: 0; padding-top: 100px; margin: 0; }
+@media (max-width: 1200px) { .mobil-menu { position: absolute; width: 104%; height: 100vh; background: #fff; right: 0; left: -2%; top: 0; display: block; padding: 0; padding-top: 100px; margin: 0; }
   .mobil-menu ul { display: block !important; width: 100%; text-align: center; }
-  .mobil-menu ul a { padding: .5em 0; display: block; font-size: 24px; }
+  .mobil-menu ul a { padding: .5em 0; display: block; font-size: 16px; }
   .mobil-menu .header-search { position: absolute; bottom: 100px; width: 300px; left: 0; right: 0; margin: auto; padding: 0; }
   .mobil-menu .header-search ul { text-align: center; }
-  .mobil-menu .header-search ul a { font-size: 16px; color: #777; }
+  .mobil-menu .header-search ul a { padding: .5em 0; font-size: 12px; color: #777; }
   .mobil-menu .header-search .search-area { margin-top: 30px; }
   .mobil-menu.open { -webkit-transform: translateX(0px); transform: translateX(0px); } }
 
+@media (max-width: 1200px) { .mobil-header-box { position: absolute; width: 100%; left: 0; top: 0; z-index: 0; max-width: 100%; } }
+
 .search-box { position: fixed; width: 100%; height: 100%; z-index: 99; top: 60px; left: 0; opacity: 0; visibility: hidden; -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
 
-.search-box .open-search { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 5; opacity: 1; background: #000; }
+.search-box .open-search { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 5; opacity: 1; background: rgba(0, 0, 0, 0.44); }
 
 .search-box .search-content { padding: 0 20px; display: block; margin: auto; min-width: 300px; position: relative; z-index: 10; text-align: center; background: #fff; padding: 1em; -webkit-transform: translateY(-300px); transform: translateY(-300px); -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out; }
 
@@ -256,7 +264,7 @@ header.nav-up { top: -100px; }
 
 .product-item { text-decoration: none; position: relative; color: #000; overflow: hidden; width: 100%; display: block; z-index: 10; margin-bottom: 50px; }
 
-.product-item .product-slider { padding: 0; margin: 0; list-style: none; }
+.product-item .product-slider { padding: 0; margin: 0; list-style: none; max-height: 300px; overflow: hidden; }
 
 .product-item .product-slider a { display: block; }
 
@@ -280,17 +288,19 @@ header.nav-up { top: -100px; }
 
 .product-info { text-align: center; margin-top: 1em; }
 
-.product-info h2 { margin-bottom: 0; margin-top: 0; font-size: 24px; text-transform: uppercase; font-weight: 300; letter-spacing: 1px; }
+.product-info h2 { margin-bottom: 0; margin-top: 0; font-size: 20px; text-transform: uppercase; font-weight: 500; letter-spacing: 1px; }
 
-.product-info h6 { margin: 0; margin-bottom: 1.5em; font-size: 16px; font-weight: 100; letter-spacing: 2px; color: #555; }
+.product-info h6 { margin-bottom: 1.5em; font-size: 12px; font-weight: 600; letter-spacing: 2px; color: #555; }
 
-.product-info p { margin: 0; text-transform: uppercase; color: #777; font-family: "Futura PT Book"; }
+.product-info p { margin: 0; text-transform: uppercase; color: #777; font-family: "Futura PT Book"; font-size: 10px; }
 
 body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .main-page header { background: #fff; }
 
-.main-page section { position: relative; height: 100vh; }
+.main-page section { position: relative; height: 100vh; width: 100%; overflow: hidden; }
+
+.main-page section ul.main-page-slider { padding: 0; margin: 0; list-style: none; }
 
 .main-page section .info { position: absolute; z-index: 100; width: 500px; height: 200px; text-align: center; top: 10vh; left: 0; bottom: 0; right: 0; margin: auto; color: #fff; }
 
@@ -362,11 +372,11 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page .drop-filter { list-style: none; padding: 0 0 0 10px; margin: 10px 0; display: none; position: relative; }
 
-.catalog-page .drop-filter li { margin-bottom: 2px; }
+.catalog-page .drop-filter li { margin-bottom: 2px; position: relative; }
 
 .catalog-page .drop-filter li a, .catalog-page .drop-filter li label { font-size: 12px; }
 
-.catalog-page .drop-filter li label { position: relative; cursor: pointer; }
+.catalog-page .drop-filter li label { position: relative; cursor: pointer; display: inline-block; vertical-align: top; }
 
 .catalog-page .drop-filter li label:before { content: ''; display: inline-block; border: 1px solid; margin-right: .5em; }
 
@@ -374,15 +384,27 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page .drop-filter li input { opacity: 0; position: absolute; }
 
-.catalog-page .drop-filter li input[type=radio] + label:before { width: 8px; height: 8px; border-radius: 100%; }
+.catalog-page .drop-filter li input[type=radio] + label:before { width: 12px; height: 12px; border-radius: 100%; }
 
-.catalog-page .drop-filter li input[type=radio] + label:after { border-radius: 100%; width: 4px; height: 4px; left: 3px; top: 5px; }
+.catalog-page .drop-filter li input[type=radio] + label:after { border-radius: 100%; width: 8px; height: 8px; left: 3px; top: 3px; }
 
 .catalog-page .drop-filter li input[type=checkbox] + label:before { width: 12px; height: 12px; }
 
 .catalog-page .drop-filter li input[type=checkbox] + label:after { width: 8px; height: 8px; left: 3px; top: 3px; }
 
 .catalog-page .drop-filter li input:checked + label:after { background: #000; }
+
+.catalog-page .drop-filter .range-slider { text-align: left; margin-left: -.5em; width: 200px; height: 70px; position: relative; }
+
+.catalog-page .drop-filter .range-slider span { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+.catalog-page .drop-filter .range-slider input { border: 0; margin: 0 5px; text-align: center; box-shadow: none; opacity: none; }
+
+.catalog-page .drop-filter .range-slider input[type=number] { font-weight: bold; border-bottom: 2px solid #ddd; }
+
+.catalog-page .drop-filter .range-slider input[type=range] { display: none; -moz-appearance: textfield; }
+
+.catalog-page .drop-filter .range-slider svg, .catalog-page .drop-filter .range-slider input[type="range"] { position: absolute; left: 0; bottom: 0; }
 
 .product-page { padding-top: 100px; }
 
@@ -418,13 +440,13 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .pagination li.active a { font-weight: bold; border-bottom: 2px solid #000000; }
 
-.news-item-page { padding-top: 100px; }
+.news-item-page { padding-top: 70px; }
 
 .news-item-page .news-title h6 { margin-top: 0; }
 
 .news-item-page .news-description p { font-size: 18px; }
 
-.news-item-page .news-hero { position: relative; height: calc(100vh - 100px); background: #000; padding-top: 200px; }
+.news-item-page .news-hero { position: relative; height: calc(100vh - 70px); background: #000; padding-top: 200px; margin-bottom: 50px; }
 
 .news-item-page .news-hero .row { position: relative; z-index: 10; color: #fff; }
 
@@ -462,11 +484,11 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brands-list > .brand-item .slider-brand { padding: 0; margin: 0; }
 
-.brands-page .brands-list > .brand-item .slider-brand .pic { height: 95vh; background-size: cover; background-position: center; }
+.brands-page .brands-list > .brand-item .slider-brand .pic { height: 100vh; min-height: 500px; background-size: cover; background-position: center; }
 
 @media (max-width: 599px) { .brands-page .brands-list > .brand-item .slider-brand .pic { height: 350px; margin-top: 50px; } }
 
-.brands-page .brands-list > .brand-item .text-content { width: 300px; height: 300px; margin: auto; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
+.brands-page .brands-list > .brand-item .text-content { width: 100%; max-width: 400px; height: 300px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }
 
 @media (max-width: 599px) { .brands-page .brands-list > .brand-item .text-content { padding-top: 50px; position: relative; height: auto; } }
 
@@ -521,3 +543,21 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 .terms-page main form textarea { padding: .5em; border: 1px solid #000; display: block; width: 100%; }
 
 .terms-page main form .send { background: #000; width: 150px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; padding: .75em 1.5em; color: #fff; border: 0; box-shadow: none; margin: auto; margin-top: 20px; border-radius: 50px; }
+
+.about-page main { padding-top: 100px; padding-bottom: 150px; }
+
+.about-page main h2 { text-align: center; }
+
+.about-page main .about-other-links { border-top: 1px solid #000; padding: 50px 0 0; margin-top: 100px; text-align: center; }
+
+.about-page main .about-other-links img { width: 30px; margin: auto; }
+
+.about-page main .about-other-links h3 { font-weight: 100; font-size: 18px; letter-spacing: 1px; text-transform: uppercase; }
+
+.up-and-down { animation: up-and-down linear 2s; animation-iteration-count: infinite; transform-origin: 50% 50%; -webkit-animation: up-and-down linear 2s; -webkit-animation-iteration-count: infinite; -webkit-transform-origin: 50% 50%; -moz-animation: up-and-down linear 2s; -moz-animation-iteration-count: infinite; -moz-transform-origin: 50% 50%; -o-animation: up-and-down linear 2s; -o-animation-iteration-count: infinite; -o-transform-origin: 50% 50%; }
+
+@keyframes up-and-down { 0%, 100% { -webkit-transform: translateY(0); transform: translateY(0); }
+  50% { -webkit-transform: translateY(15px); transform: translateY(15px); } }
+
+@-webkit-keyframes up-and-down { 0%, 100% { -webkit-transform: translateY(0); transform: translateY(0); }
+  50% { -webkit-transform: translateY(15px); transform: translateY(15px); } }

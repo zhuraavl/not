@@ -86,9 +86,9 @@ $(document).ready(function () {
     useCSS: true,
     cssEasing: 'cubic-bezier(0.19, 1, 0.22, 1)', //'cubic-bezier(0.25, 0, 0.25, 1)',//
     speed: 1000, //ms'
-    auto: false,
+    auto: true,
     loop: true,
-    controls: true,
+    controls: false,
     prevHtml: '',
     nextHtml: '',
     enableTouch: true,
@@ -165,7 +165,12 @@ function hasScrolled() {
   
   
   
-  
+$(".scroll-top").click(function () {
+    event.preventDefault();
+    $("html, body").animate({
+      scrollTop: $('body').offset().top
+    }, 1000);
+  });  
 
  
   
