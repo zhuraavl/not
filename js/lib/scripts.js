@@ -2,13 +2,7 @@ $(document).ready(function () {
 
   
   
-  $(function() {
-    $.scrollify({
-      section: ".brand-item",
-      scrollbars: false,
-      overflowScroll: false
-    });
-  });
+  
 
   $(document).on('click', '.brand-links a[href^="#"]', function(e) {
     // target element id
@@ -24,7 +18,7 @@ $(document).ready(function () {
     e.preventDefault();
 
     // top position relative to the document
-    var pos = $id.offset().top - 100;
+    var pos = $id.offset().top - 0;
 
     // animated top scrolling
     $('body, html').animate({scrollTop: pos});
@@ -65,10 +59,10 @@ $(document).ready(function () {
     slideMove: 1,
     slideMargin: 0,
     mode: "slide",
-    speed: 1000,
+    speed: 2000,
     pause: 6500,
     useCSS: true,
-    cssEasing: 'cubic-bezier(0.19, 1, 0.22, 1)',
+    cssEasing: 'cubic-bezier(0.77, 0, 0.175, 1)',
     auto: true,
     loop: true,
     controls: true,
@@ -84,13 +78,12 @@ $(document).ready(function () {
     slideMove: 1,
     mode: "slide",
     useCSS: true,
-    cssEasing: 'cubic-bezier(0.19, 1, 0.22, 1)', //'cubic-bezier(0.25, 0, 0.25, 1)',//
-    speed: 1000, //ms'
+    cssEasing: 'cubic-bezier(0.77, 0, 0.175, 1)', 
+    speed: 2000,
+    pause: 5000,
     auto: true,
     loop: true,
     controls: false,
-    prevHtml: '',
-    nextHtml: '',
     enableTouch: true,
     enableDrag: true,
     freeMove: true,
@@ -101,8 +94,8 @@ $(document).ready(function () {
     slideMove: 1,
     mode: "slide",
     useCSS: true,
-    cssEasing: 'cubic-bezier(0.19, 1, 0.22, 1)', //'cubic-bezier(0.25, 0, 0.25, 1)',//
-    speed: 1000, //ms'
+    cssEasing: 'cubic-bezier(0.77, 0, 0.175, 1))',
+    speed: 2000,
     auto: false,
     loop: true,
     controls: true,

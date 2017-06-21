@@ -55,7 +55,7 @@ body
       position: absolute
       z-index: 100
       width: 500px
-      height: 200px
+      height: 300px
       text-align: center
       top: 10vh
       left: 0
@@ -73,6 +73,7 @@ body
         letter-spacing: .1em
         text-transform: uppercase
       p
+        font-size: 16px
         @include mobil
           font-size: 16px
     .lslide
@@ -150,15 +151,7 @@ body
     background-position: center
     z-index: 1
     position: relative
-    &:after
-      content: ''
-      background: rgba(0, 0, 0, 0.4)
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
-      z-index: 1
+    
   .lSAction > a
     background: trasnparent !important
     color: transprent
@@ -524,15 +517,44 @@ body
     
 //   brands page
 .brands-page
-  main
-  .brands-list > .brand-item
+  
+  .brand-item
     text-align: center
-    overflow: hidden
     position: relative
     background: #fff
+    min-height: 700px
+    height: 100vh
+    @include tablet-h
+      min-height: auto
+      height: auto
+      padding-top: 550px
     @include mobil
-      padding: 20px 0
+      padding-top: 150px
+    .row > .col-md-6
+      padding-left: 200px
+      @include tablet-h
+        padding-left: 0
+    
+    .row.middle-xs
+      height: 100vh
+      min-height: 750px
+      @include tablet-h
+        min-height: 100%
+        height: auto
+    .slider-brand-box
+      position: absolute
+      width: 50%
+      height: 100vh
+      right: 0
+      top: 0
+      @include tablet-h
+        width: 100%
+        height: 500px
+      @include mobil
+        top: 0px
+        height: 350px
     .slider-brand
+      list-style: none
       padding: 0
       margin: 0
       .pic
@@ -540,21 +562,22 @@ body
         min-height: 500px
         background-size: cover
         background-position: center
+        @include tablet-h
+          height: 500px
+          min-height: 500px
         @include mobil
-          height: 350px
-          margin-top: 50px
+          height: 300px
+          min-height: 300px
     .text-content
       width: 100%
       max-width: 400px
-      height: 300px
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
       margin: auto
+      position: relative
+      z-index: 10000000
+      @include tablet-h
+        
       @include mobil
-        padding-top: 50px
+        padding-top: 250px
         position: relative
         height: auto
       h4
@@ -588,48 +611,46 @@ body
         &:hover:after
           opacity: 1
           visibility: visible
-    .col-md-6
-      position: relative
+    
       
       
   
   .lSSlideOuter .lSPager.lSpg
-    botton: 30px
-    position: relative
-    li
-      a
-        display: inline
-        background: transparent
-        text-decoration: none
-        overflow: visible
-        position: relative
-        &:after
-          content: ''
-          position: absolute
-          width: 1px
-          height: 0
-          background: #000
-          bottom: 20px
-          left: 4px
-          display: block
-          transition: all .5s ease-in-out
-      &.active a:after
-        height: 15px
+    display: none !important
 
     
           
       
   .brand-links
-    
+    position: fixed
+    top: 25%
+    right: 0
+    left: 0
+    max-width: 1600px
+    margin: auto
     display: block
     list-style: none
     padding: 0
-    margin: 0
+    z-index: 10
+    
+    @include tablet-h
+      position: relative
+      text-align: center
+      top: 0
+      padding: 0
+      margin: 50px 0 50px
     @include mobil
-      padding-top: 50px
+      padding-top: 100px
       padding-bottom: 50px
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
     li
       margin-bottom: .5em
+      max-width: 200px
+      @include tablet-h
+        max-width: 100%
       a
         display: block
         font-size: 14px
@@ -653,11 +674,9 @@ body
       position: relative
       height: auto
       display: block
-      margin-top: 50px
 
 
   .brands-list
-    margin-left: 16.6%
     @include medium
       margin-left: 0
     
