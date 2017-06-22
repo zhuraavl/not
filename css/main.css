@@ -167,7 +167,7 @@ footer .copyright { margin-top: 20px; }
 
 footer .copyright p { font-size: 10px; color: #999; text-transform: uppercase; text-align: center; letter-spacing: 1px; }
 
-.scroll-top { position: fixed; bottom: 5%; right: 3%; z-index: 999; text-align: center; color: #999; text-decoration: none; font-size: 35px; }
+.scroll-top { position: fixed; bottom: 2%; right: 3%; z-index: 999; text-align: center; color: #999; text-decoration: none; font-size: 35px; }
 
 .scroll-top span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -384,9 +384,9 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page .drop-filter li input { opacity: 0; position: absolute; }
 
-.catalog-page .drop-filter li input[type=radio] + label:before { width: 12px; height: 12px; border-radius: 100%; }
+.catalog-page .drop-filter li input[type=radio] + label:before { width: 14px; height: 14px; border-radius: 100%; }
 
-.catalog-page .drop-filter li input[type=radio] + label:after { border-radius: 100%; width: 8px; height: 8px; left: 3px; top: 3px; }
+.catalog-page .drop-filter li input[type=radio] + label:after { border-radius: 100%; width: 8px; height: 8px; left: 4px; top: 4px; }
 
 .catalog-page .drop-filter li input[type=checkbox] + label:before { width: 12px; height: 12px; }
 
@@ -524,7 +524,11 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .lSSlideOuter .lSPager.lSpg { display: none !important; }
 
-.brands-page .brand-links { position: fixed; top: 25%; right: 0; left: 0; max-width: 1600px; margin: auto; display: block; list-style: none; padding: 0; z-index: 10; }
+.brands-page .brand-links { position: fixed; top: 0; right: 0; left: 0; max-width: 1600px; margin: auto; display: block; list-style: none; padding: 0; z-index: 10; }
+
+.brands-page .brand-links .row { height: 100vh; min-height: 550px; }
+
+@media (max-width: 599px) { .brands-page .brand-links .row { height: auto; min-height: 100%; } }
 
 @media (max-width: 900px) { .brands-page .brand-links { position: relative; text-align: center; top: 0; padding: 0; margin: 50px 0 50px; } }
 

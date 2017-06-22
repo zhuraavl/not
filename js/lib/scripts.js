@@ -26,6 +26,7 @@ $(document).ready(function () {
   
   
   $(".open-search").click(function () {
+    $(".mobil-menu").removeClass("open");
     $(this).removeClass("show");
     $(".search-input").focus();
     $(".search-box").toggleClass("show");
@@ -49,6 +50,7 @@ $(document).ready(function () {
   });
   $("a.open-mobil").click(function () {
     event.preventDefault();
+    $(".search-box").removeClass("show");
     $(this).toggleClass("show");
     $(".mobil-menu").toggleClass("open");
   });

@@ -263,15 +263,15 @@ body
         position: absolute
         &[type=radio]
           & + label:before
-            width: 12px
-            height: 12px
+            width: 14px
+            height: 14px
             border-radius: 100%
           & + label:after
             border-radius: 100%
             width: 8px
             height: 8px
-            left: 3px
-            top: 3px
+            left: 4px
+            top: 4px
         &[type=checkbox]
           & + label:before
             width: 12px
@@ -623,7 +623,7 @@ body
       
   .brand-links
     position: fixed
-    top: 25%
+    top: 0
     right: 0
     left: 0
     max-width: 1600px
@@ -632,6 +632,13 @@ body
     list-style: none
     padding: 0
     z-index: 10
+    .row
+      height: 100vh
+      min-height: 550px
+      @include mobil
+        height: auto
+        min-height: 100%
+      
     
     @include tablet-h
       position: relative
