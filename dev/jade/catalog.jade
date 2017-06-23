@@ -6,14 +6,26 @@ html(lang='en')
     title Catalog
     link(rel='stylesheet', href='css/main.css')
     
-  body.catalog-page
+  body.catalog-page.have-sales
     include includes/header
+    
+    // YURIY!!!! im add new sales class on body
+    .sales-full-block
+      .container-fluid
+        .row
+          .col-xs-12.reletive
+            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, incidunt.
+            button.close-sales ×
     
     main.vs-section
       section
+        button.open-filter-mobil 
+          span фильтр
+          span скрыть ×
         .container-fluid
           .row
             .col-md-2.col-sm-3.col-xs-12
+              
               ul.catalog-filter
                 li
                   a(href="") New Collection

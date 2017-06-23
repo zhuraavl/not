@@ -139,9 +139,18 @@ input[type="number"] { -moz-appearance: textfield; }
 
 .text-left { text-align: left; }
 
-footer { background: #000; padding: 100px 0 120px; color: #fff; z-index: 300; position: relative; font-size: 11px; }
+footer { background: #111117; padding: 100px 0 120px; color: #fff; z-index: 300; position: relative; font-size: 11px; }
 
-footer p { font-family: "Futura PT Book"; }
+@media (max-width: 599px) { footer { padding: 20px 0 50px; } }
+
+@media (max-width: 599px) { footer .shop-footer-info { text-align: center; }
+  footer .shop-footer-info p { font-size: 10px; text-transform: uppercase; } }
+
+footer h5 { margin: 0; font-size: 12px; font-family: "Futura PT Demi"; text-transform: uppercase; }
+
+footer h5 + p { margin: 0; }
+
+footer p, footer h5 { font-family: "Futura PT Book"; }
 
 footer a { color: #fff; font-size: 12px; display: block; text-transform: uppercase; text-decoration: none; font-family: "Futura PT Demi"; }
 
@@ -151,25 +160,43 @@ footer .scroll-top { font-size: 150px; color: #fff; text-decoration: none; text-
 
 footer .scroll-top span { font-size: 14px; display: block; }
 
-footer .social { text-align: center; padding: 0; margin: 0; display: table; width: 100%; padding-top: 100px; }
+footer .socil-lnks { text-align: center; }
 
-footer .social li { display: table-cell; }
+footer .socil-lnks h5 { font-size: 10px; }
 
-footer .social li a { display: block; color: #fff; }
+footer .socil-lnks a { display: inline-block; margin: 1em; width: 40px; }
 
-footer .subscribe-box { position: relative; margin-top: 20px; z-index: 10; margin-bottom: 16px; }
+footer .subscribe-box { position: relative; max-width: 250px; margin: 0px auto 30px; z-index: 10; }
 
-footer .subscribe-box input { box-sizing: border-box; display: block; width: 100%; background: #fff; border: 0; box-shadow: none; outline: none; padding: 2em; font-size: 14px; padding-right: 150px; }
+@media (max-width: 599px) { footer .subscribe-box { margin-top: 50px; } }
 
-footer .subscribe-box .send-button { position: absolute; top: 15px; right: 0px; width: 120px; text-align: center; background: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; border: 0; border-left: 1px solid #000; padding: 1em 1.5em; color: #999; }
+footer .subscribe-box p { text-align: center; font-size: 10px; text-transform: uppercase; font-family: "Futura PT Book"; margin: 0; }
 
-footer .copyright { margin-top: 20px; }
+footer .subscribe-box input { box-sizing: border-box; display: block; width: 100%; background: #fff; border: 0; box-shadow: none; outline: none; padding: 1em; font-size: 18px; padding-left: 60px; }
 
-footer .copyright p { font-size: 10px; color: #999; text-transform: uppercase; text-align: center; letter-spacing: 1px; }
+footer .subscribe-box input::-webkit-input-placeholder { color: #000; }
 
-.scroll-top { position: fixed; bottom: 2%; right: 3%; z-index: 999; text-align: center; color: #999; text-decoration: none; font-size: 35px; }
+footer .subscribe-box input::-moz-placeholder { color: #000; }
+
+footer .subscribe-box input:-ms-input-placeholder { color: #000; }
+
+footer .subscribe-box input:-moz-placeholder { color: #000; }
+
+footer .subscribe-box .send-button { padding: 1.25em; width: 150px; margin: 15px auto; display: block; border-radius: 25px; line-height: 1; border: 1px solid #eee; color: #fff; background: transparent; font-size: 12px; text-align: center; text-transform: uppercase; }
+
+@media (max-width: 599px) { footer .subscribe-box .send-button { font-size: 10px; font-family: "Futura PT Book"; } }
+
+footer .copyright { margin-top: 20px; text-align: center; }
+
+footer .copyright p { font-size: 10px; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+
+.scroll-top { position: fixed; bottom: 2%; right: 3%; z-index: 999; text-align: center; color: #999; text-decoration: none; opacity: 0; -webkit-transition: all .3s ease; transition: all .3s ease; }
+
+@media (max-width: 599px) { .scroll-top { width: 30px; right: 1em; bottom: 0; } }
 
 .scroll-top span { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+
+.scroll-top.show { opacity: 1; }
 
 header { position: fixed; padding: 1em 0; top: 0; left: 0; right: 0; background: #fff; z-index: 100; width: 100%; margin: auto; -webkit-transition: top .8s ease-in-out; transition: top .8s ease-in-out; }
 
@@ -178,6 +205,8 @@ header .logo { display: block; font-size: 24px; letter-spacing: 1px; font-family
 @media (max-width: 599px) { header .logo { font-size: 18px; } }
 
 header .logo span { font-size: 8px; display: block; font-family: "Futura PT Book"; text-transform: uppercase; }
+
+@media (max-width: 599px) { header .logo span { font-size: 6px; } }
 
 header .logo:hover { text-decoration: none; }
 
@@ -205,27 +234,31 @@ header .open-search { position: absolute; width: 20px; height: 20px; padding: 0;
 
 @media (max-width: 1200px) { header .open-search { right: 70px; } }
 
-@media (max-width: 599px) { header .open-search { right: 45px; top: 6px; } }
+@media (max-width: 599px) { header .open-search { right: 55px; top: 1px; font-size: 16px; } }
 
 header.nav-up { top: -100px; }
 
-.open-mobil { position: absolute; display: block; width: 30px; height: 30px; top: 15px; right: 1.6em; cursor: pointer; z-index: 10; display: none; }
+.open-mobil { position: absolute; display: block; width: 20px; height: 20px; top: 15px; right: 1.6em; cursor: pointer; z-index: 10; display: none; -webkit-transition: all .5s; transition: all .5s; }
 
-@media (max-width: 599px) { .open-mobil { top: 8px; right: 0; } }
+@media (max-width: 599px) { .open-mobil { top: 6px; right: 1em; } }
 
-.open-mobil span { -webkit-transition: all 0.5s ease; transition: all 0.5s ease; background: #000; width: 30px; height: 3px; display: block; }
+.open-mobil span { -webkit-transition: all 0.5s ease; transition: all 0.5s ease; background: #000; width: 20px; height: 2px; display: block; }
 
-.open-mobil span:before, .open-mobil span:after { content: ""; position: absolute; margin: 0 auto; background: #000; width: 30px; height: 3px; left: 0; right: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+.open-mobil span:before, .open-mobil span:after { content: ""; position: absolute; margin: 0 auto; background: #000; width: 20px; height: 2px; left: 0; right: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
 
-.open-mobil span:before { bottom: 11px; }
+.open-mobil span:before { top: 6px; }
 
-.open-mobil span:after { top: 8px; }
+.open-mobil span:after { top: 12px; }
+
+.open-mobil.show { -webkit-transform: translateY(3px) rotate(-45deg); transform: translateY(3px) rotate(-45deg); }
+
+.open-mobil.show span:after { opacity: 0; }
+
+.open-mobil.show span:before { -webkit-transform: rotate(-90deg); transform: rotate(-90deg); top: 0; }
 
 @media (max-width: 1200px) { .open-mobil { display: block; } }
 
-@media (max-width: 1200px) { .mobil-menu { -webkit-transform: translateX(200%); transform: translateX(200%); -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; } }
-
-@media (max-width: 1200px) { .mobil-menu { position: absolute; width: 104%; height: 100vh; background: #fff; right: 0; left: -2%; top: 0; display: block; padding: 0; padding-top: 100px; margin: 0; }
+@media (max-width: 1200px) { .mobil-menu { position: absolute; width: 104%; height: 100vh; background: #fff; right: 0; left: -2%; top: 0; display: block; padding: 0; padding-top: 100px; margin: 0; -webkit-transform: translateX(200%); transform: translateX(200%); -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
   .mobil-menu ul { display: block !important; width: 100%; text-align: center; }
   .mobil-menu ul a { padding: .5em 0; display: block; font-size: 16px; }
   .mobil-menu .header-search { position: absolute; bottom: 100px; width: 300px; left: 0; right: 0; margin: auto; padding: 0; }
@@ -236,19 +269,19 @@ header.nav-up { top: -100px; }
 
 @media (max-width: 1200px) { .mobil-header-box { position: absolute; width: 100%; left: 0; top: 0; z-index: 0; max-width: 100%; } }
 
-.search-box { position: fixed; width: 100%; height: 100%; z-index: 99; top: 60px; left: 0; opacity: 0; visibility: hidden; -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
+.search-box { position: fixed; width: 100%; height: 100%; z-index: 99; top: 59px; left: 0; opacity: 0; visibility: hidden; -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
 
 .search-box .open-search { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 5; opacity: 1; background: rgba(0, 0, 0, 0.44); }
 
 .search-box .search-content { padding: 0 20px; display: block; margin: auto; min-width: 300px; position: relative; z-index: 10; text-align: center; background: #fff; padding: 1em; -webkit-transform: translateY(-300px); transform: translateY(-300px); -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out; }
 
-.search-box .search-content .search-input { width: 100%; background: #fff; height: 50px; padding-right: 100px; outline: none; font-size: 16px; text-align: center; display: block; -webkit-transition: all .5s; transition: all .5s; border: 0; border-bottom: 1px solid #ccc; -webkit-transition: all .6s ease; transition: all .6s ease; -webkit-transition-delay: .25s; transition-delay: .25s; -webkit-transform: translateY(-30px); transform: translateY(-30px); opacity: 0; }
+.search-box .search-content .search-input { width: 100%; background: #fff; padding-right: 100px; outline: none; font-size: 18px; text-align: center; font-weight: bold; display: block; -webkit-transition: all .5s; transition: all .5s; border: 0; border-bottom: 1px solid #ccc; -webkit-transition: all .6s ease; transition: all .6s ease; -webkit-transition-delay: .15s; transition-delay: .15s; -webkit-transform: translateY(-30px); transform: translateY(-30px); opacity: 0; margin-top: 10px; margin-bottom: 5px; }
 
-.search-box .search-content .send-search { display: block; width: 100px; border-radius: 25px; padding: .5em; font-size: 14px; background: #000; color: #fff; border: 0; margin: auto; line-height: 1; text-transform: uppercase; margin-top: 10px; -webkit-transition: all .6s ease; transition: all .6s ease; -webkit-transition-delay: .25s; transition-delay: .25s; -webkit-transform: translateY(-40px); transform: translateY(-40px); opacity: 0; }
+.search-box .search-content .send-search { display: block; width: 100px; border-radius: 25px; padding: .5em; font-size: 14px; background: #000; color: #fff; border: 0; margin: auto; line-height: 1; text-transform: uppercase; margin-top: 10px; -webkit-transition: all .6s ease; transition: all .6s ease; -webkit-transition-delay: .15s; transition-delay: .15s; -webkit-transform: translateY(-40px); transform: translateY(-40px); opacity: 0; }
 
-.search-box .search-content p { margin: 0; -webkit-transition: all .5s ease-in; transition: all .5s ease-in; -webkit-transition-delay: .25s; transition-delay: .25s; -webkit-transform: translateY(-50px); transform: translateY(-50px); }
+.search-box .search-content p { margin: 0; -webkit-transition: all .5s ease-in; transition: all .5s ease-in; -webkit-transition-delay: .15s; transition-delay: .15s; -webkit-transform: translateY(-50px); transform: translateY(-50px); }
 
-.search-box .search-content ul { padding: .5em 0; margin: 0; list-style: none; -webkit-transition: all .6s ease-out; transition: all .6s ease-out; -webkit-transition-delay: .25s; transition-delay: .25s; -webkit-transform: translateY(-60px); transform: translateY(-60px); opacity: 0; }
+.search-box .search-content ul { padding: .5em 0; margin: 0; list-style: none; -webkit-transition: all .6s ease-out; transition: all .6s ease-out; -webkit-transition-delay: .15s; transition-delay: .15s; -webkit-transform: translateY(-60px); transform: translateY(-60px); opacity: 0; }
 
 .search-box .search-content ul li { display: inline-block; }
 
@@ -346,9 +379,35 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page { padding-top: 100px; }
 
+.catalog-page.have-sales { padding-top: 150px; }
+
+.catalog-page.have-sales header { top: 50px; }
+
+@media (max-width: 599px) { .catalog-page.have-sales header { top: 0; } }
+
+@media (max-width: 599px) { .catalog-page { padding-top: 140px; } }
+
+.catalog-page .sales-full-block { position: absolute; height: 50px; top: 0; z-index: 1000; width: 100%; background: #ffbebe; text-align: center; }
+
+@media (max-width: 599px) { .catalog-page .sales-full-block { display: none; } }
+
+.catalog-page .sales-full-block button.close-sales { position: absolute; background: transparent; font-size: 28px; color: #000; border: 0; right: 0; top: 5px; }
+
+.catalog-page button.open-filter-mobil { position: absolute; top: 50px; background: #000; height: 55px; width: 100%; color: #fff; border: 0; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; overflow: hidden; display: none; }
+
+.catalog-page button.open-filter-mobil span { width: 100%; left: 0; position: absolute; top: 25px; -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
+
+.catalog-page button.open-filter-mobil span:last-child { -webkit-transform: translateY(-50px); transform: translateY(-50px); }
+
+.catalog-page button.open-filter-mobil.show span:first-child { -webkit-transform: translateY(50px); transform: translateY(50px); }
+
+.catalog-page button.open-filter-mobil.show span:last-child { -webkit-transform: translateY(0px); transform: translateY(0px); }
+
+@media (max-width: 599px) { .catalog-page button.open-filter-mobil { display: block; } }
+
 .catalog-page .catalog-filter { position: fixed; padding: 0; margin: 0; list-style: none; z-index: 5; height: 350px; top: 0; bottom: 0; margin: auto; }
 
-@media (max-width: 599px) { .catalog-page .catalog-filter { position: relative; top: 0; padding-bottom: 50px; } }
+@media (max-width: 599px) { .catalog-page .catalog-filter { position: relative; top: 0; padding-bottom: 50px; display: none; } }
 
 .catalog-page .catalog-filter li a, .catalog-page .catalog-filter li label { padding: 0; letter-spacing: 1px; display: block; text-decoration: none; color: #000; -webkit-transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1); transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1); text-transform: uppercase; font-size: 14px; }
 
@@ -484,6 +543,8 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 @media (max-width: 599px) { .brands-page .brand-item { padding-top: 150px; } }
 
+@media (max-width: 599px) { .brands-page .brand-item .container-fluid { display: none; } }
+
 .brands-page .brand-item .row > .col-md-6 { padding-left: 200px; }
 
 @media (max-width: 900px) { .brands-page .brand-item .row > .col-md-6 { padding-left: 0; } }
@@ -494,21 +555,27 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item .slider-brand-box { position: absolute; width: 50%; height: 100vh; right: 0; top: 0; }
 
-@media (max-width: 900px) { .brands-page .brand-item .slider-brand-box { width: 100%; height: 500px; } }
+@media (max-width: 900px) { .brands-page .brand-item .slider-brand-box { width: 100%; } }
 
-@media (max-width: 599px) { .brands-page .brand-item .slider-brand-box { top: 0px; height: 350px; } }
+@media (max-width: 599px) { .brands-page .brand-item .slider-brand-box { top: 0px; } }
 
 .brands-page .brand-item .slider-brand { list-style: none; padding: 0; margin: 0; }
+
+@media (max-width: 599px) { .brands-page .brand-item .slider-brand { height: 100vh; } }
+
+@media (max-width: 599px) { .brands-page .brand-item .slider-brand li { height: 100vh; position: relative; } }
 
 .brands-page .brand-item .slider-brand .pic { height: 100vh; min-height: 500px; background-size: cover; background-position: center; }
 
 @media (max-width: 900px) { .brands-page .brand-item .slider-brand .pic { height: 500px; min-height: 500px; } }
 
-@media (max-width: 599px) { .brands-page .brand-item .slider-brand .pic { height: 300px; min-height: 300px; } }
+@media (max-width: 599px) { .brands-page .brand-item .slider-brand .pic { height: 100vh; min-height: 568px; } }
+
+@media (max-width: 599px) { .brands-page .brand-item .lSPrev { display: none !important; } }
 
 .brands-page .brand-item .text-content { width: 100%; max-width: 400px; margin: auto; position: relative; z-index: 10000000; }
 
-@media (max-width: 599px) { .brands-page .brand-item .text-content { padding-top: 250px; position: relative; height: auto; } }
+@media (max-width: 599px) { .brands-page .brand-item .text-content { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); padding: 1em; max-width: 300px; margin: auto; left: 0; right: 0; } }
 
 .brands-page .brand-item .text-content h4 { font-weight: 300; font-size: 24px; margin: 0; letter-spacing: 1px; }
 
@@ -522,17 +589,23 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item .text-content .btn:hover:after { opacity: 1; visibility: visible; }
 
-.brands-page .lSSlideOuter .lSPager.lSpg { display: none !important; }
+.brands-page .lSSlideOuter .lSPager.lSpg { bottom: 100px; position: absolute; left: 0; right: 0; width: 100%; z-index: 100; }
+
+.brands-page .lSSlideOuter .lSPager.lSpg li a { display: inline; background: transparent; text-decoration: none; overflow: visible; position: relative; }
+
+.brands-page .lSSlideOuter .lSPager.lSpg li a:after { content: ''; position: absolute; width: 1px; height: 0; background: #000; bottom: 20px; left: 4px; display: block; -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out; }
+
+.brands-page .lSSlideOuter .lSPager.lSpg li.active a:after { height: 15px; }
 
 .brands-page .brand-links { position: fixed; top: 0; right: 0; left: 0; max-width: 1600px; margin: auto; display: block; list-style: none; padding: 0; z-index: 10; }
 
 .brands-page .brand-links .row { height: 100vh; min-height: 550px; }
 
-@media (max-width: 599px) { .brands-page .brand-links .row { height: auto; min-height: 100%; } }
+@media (max-width: 599px) { .brands-page .brand-links .row { min-height: 568px; } }
 
 @media (max-width: 900px) { .brands-page .brand-links { position: relative; text-align: center; top: 0; padding: 0; margin: 50px 0 50px; } }
 
-@media (max-width: 599px) { .brands-page .brand-links { padding-top: 100px; padding-bottom: 50px; } }
+@media (max-width: 599px) { .brands-page .brand-links { padding-bottom: 50px; } }
 
 .brands-page .brand-links ul { list-style: none; padding: 0; margin: 0; }
 

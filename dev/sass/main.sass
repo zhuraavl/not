@@ -165,7 +165,66 @@ body
 
 .catalog-page
   padding-top: 100px
-  
+  &.have-sales
+    padding-top: 150px
+    @include mobil
+    header
+      top: 50px
+      @include mobil
+        top: 0
+  @include mobil
+    padding-top: 140px
+    
+    
+  .sales-full-block
+    position: absolute
+    height: 50px
+    top: 0
+    z-index: 1000
+    width: 100%
+    background: #ffbebe
+    text-align: center
+    @include mobil
+      display: none
+    button.close-sales
+      position: absolute
+      background: transparent
+      font-size: 28px
+      color: #000
+      border: 0
+      right: 0
+      top: 5px
+    
+  button.open-filter-mobil
+    position: absolute
+    top: 50px
+    background: #000
+    height: 55px
+    width: 100%
+    color: #fff
+    border: 0
+    text-transform: uppercase
+    font-size: 12px
+    letter-spacing: 1px
+    overflow: hidden
+    display: none
+    span
+      width: 100%
+      left: 0
+      position: absolute
+      top: 25px
+      transition: all .3s ease-in-out
+    span:first-child
+    span:last-child
+      transform: translateY(-50px)
+    &.show
+      span:first-child
+        transform: translateY(50px)
+      span:last-child
+        transform: translateY(0px)
+      
+    @include mobil
+      display: block
   .catalog-filter
     position: fixed
     padding: 0
@@ -180,6 +239,7 @@ body
       position: relative
       top: 0
       padding-bottom: 50px
+      display: none
     li
       a, label
         padding: 0
@@ -530,6 +590,9 @@ body
       padding-top: 550px
     @include mobil
       padding-top: 150px
+    .container-fluid
+      @include mobil
+        display: none 
     .row > .col-md-6
       padding-left: 200px
       @include tablet-h
@@ -549,14 +612,18 @@ body
       top: 0
       @include tablet-h
         width: 100%
-        height: 500px
       @include mobil
         top: 0px
-        height: 350px
     .slider-brand
       list-style: none
       padding: 0
       margin: 0
+      @include mobil
+        height: 100vh
+      li
+        @include mobil
+          height: 100vh
+          position: relative
       .pic
         height: 100vh
         min-height: 500px
@@ -566,8 +633,12 @@ body
           height: 500px
           min-height: 500px
         @include mobil
-          height: 300px
-          min-height: 300px
+          height: 100vh
+          min-height: 568px
+    .lSPrev
+      @include mobil
+        display: none !important
+        
     .text-content
       width: 100%
       max-width: 400px
@@ -577,9 +648,14 @@ body
       @include tablet-h
         
       @include mobil
-        padding-top: 250px
-        position: relative
-        height: auto
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        padding: 1em
+        max-width: 300px
+        margin: auto
+        left: 0
+        right: 0
       h4
         font-weight: 300
         font-size: 24px
@@ -616,7 +692,32 @@ body
       
   
   .lSSlideOuter .lSPager.lSpg
-    display: none !important
+    bottom: 100px
+    position: absolute
+    left: 0
+    right: 0
+    width: 100%
+    z-index: 100
+    li
+      a
+        display: inline
+        background: transparent
+        text-decoration: none
+        overflow: visible
+        position: relative
+        &:after
+          content: ''
+          position: absolute
+          width: 1px
+          height: 0
+          background: #000
+          bottom: 20px
+          left: 4px
+          display: block
+          transition: all .5s ease-in-out
+      &.active a:after
+        height: 15px
+
 
     
           
@@ -636,8 +737,7 @@ body
       height: 100vh
       min-height: 550px
       @include mobil
-        height: auto
-        min-height: 100%
+        min-height: 568px
       
     
     @include tablet-h
@@ -647,7 +747,6 @@ body
       padding: 0
       margin: 50px 0 50px
     @include mobil
-      padding-top: 100px
       padding-bottom: 50px
     ul
       list-style: none
