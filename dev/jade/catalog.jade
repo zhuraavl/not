@@ -215,6 +215,14 @@ html(lang='en')
               .space-100
     
     include includes/footer
+    script.
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+          $(".have-sales").addClass('header-top');
+        } else {
+          $(".have-sales").removeClass('header-top');
+        }
+      });
               
               
     

@@ -70,6 +70,9 @@ $(document).ready(function () {
     $(this).toggleClass("show");
     $(".catalog-filter").slideToggle();
   });
+  $("button.close-sales").click(function () {
+    $(".have-sales").addClass('hidden-sales');
+  });
   $(".filters > a").click(function () {
     event.preventDefault();
     $(".filters > a").removeClass('active');
@@ -169,7 +172,7 @@ $(document).ready(function () {
 
 
   // add elements on mobil to brand
-  if ($(window).width() < 600) {} else {
+  if ($(window).width() < 900) {} else {
     $(".slider-brand-box li:nth-child(2)").remove();
   }
 

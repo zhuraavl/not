@@ -170,10 +170,29 @@ body
     @include mobil
     header
       top: 50px
+      &:after
+        content: ''
+        position: absolute
+        width: 100%
+        top: -100px
+        height: 100px
+        background: #fff
+        left: 0
+        right: 0
+        display: block
       @include mobil
         top: 0
+  &.header-top, &.hidden-sales
+    .sales-full-block
+      transform: translateY(-100%)
+    header
+      top: 0
+  &.hidden-sales
+    .sales-full-block
+      display: none
   @include mobil
     padding-top: 140px
+    
     
     
   .sales-full-block
@@ -184,6 +203,7 @@ body
     width: 100%
     background: #ffbebe
     text-align: center
+    transition: all .5s cubic-bezier(0.77, 0, 0.175, 1)
     @include mobil
       display: none
     button.close-sales
@@ -585,13 +605,9 @@ body
     min-height: 700px
     height: 100vh
     @include tablet-h
-      min-height: auto
-      height: auto
-      padding-top: 550px
-    @include mobil
       padding-top: 150px
     .container-fluid
-      @include mobil
+      @include tablet-h
         display: none 
     .row > .col-md-6
       padding-left: 200px
@@ -612,16 +628,15 @@ body
       top: 0
       @include tablet-h
         width: 100%
-      @include mobil
         top: 0px
     .slider-brand
       list-style: none
       padding: 0
       margin: 0
-      @include mobil
+      @include tablet-h
         height: 100vh
       li
-        @include mobil
+        @include tablet-h
           height: 100vh
           position: relative
       .pic
@@ -630,13 +645,10 @@ body
         background-size: cover
         background-position: center
         @include tablet-h
-          height: 500px
-          min-height: 500px
-        @include mobil
           height: 100vh
           min-height: 568px
     .lSPrev
-      @include mobil
+      @include tablet-h
         display: none !important
         
     .text-content
@@ -646,8 +658,6 @@ body
       position: relative
       z-index: 10000000
       @include tablet-h
-        
-      @include mobil
         position: absolute
         top: 50%
         transform: translateY(-50%)

@@ -182,6 +182,8 @@ footer .subscribe-box input:-ms-input-placeholder { color: #000; }
 
 footer .subscribe-box input:-moz-placeholder { color: #000; }
 
+@media (max-width: 1200px) { footer .subscribe-box input { padding-left: 35px; } }
+
 footer .subscribe-box .send-button { padding: 1.25em; width: 150px; margin: 15px auto; display: block; border-radius: 25px; line-height: 1; border: 1px solid #eee; color: #fff; background: transparent; font-size: 12px; text-align: center; text-transform: uppercase; }
 
 @media (max-width: 599px) { footer .subscribe-box .send-button { font-size: 10px; font-family: "Futura PT Book"; } }
@@ -198,7 +200,7 @@ footer .copyright p { font-size: 10px; color: #fff; text-transform: uppercase; l
 
 .scroll-top.show { opacity: 1; }
 
-header { position: fixed; padding: 1em 0; top: 0; left: 0; right: 0; background: #fff; z-index: 100; width: 100%; margin: auto; -webkit-transition: top .8s ease-in-out; transition: top .8s ease-in-out; }
+header { position: fixed; padding: 1em 0; top: 0; left: 0; right: 0; background: #fff; z-index: 100; width: 100%; margin: auto; -webkit-transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1); transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
 
 header .logo { display: block; font-size: 24px; letter-spacing: 1px; font-family: "Futura PT Demi"; position: relative; z-index: 10; white-space: nowrap; }
 
@@ -383,11 +385,19 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page.have-sales header { top: 50px; }
 
+.catalog-page.have-sales header:after { content: ''; position: absolute; width: 100%; top: -100px; height: 100px; background: #fff; left: 0; right: 0; display: block; }
+
 @media (max-width: 599px) { .catalog-page.have-sales header { top: 0; } }
+
+.catalog-page.header-top .sales-full-block, .catalog-page.hidden-sales .sales-full-block { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+
+.catalog-page.header-top header, .catalog-page.hidden-sales header { top: 0; }
+
+.catalog-page.hidden-sales .sales-full-block { display: none; }
 
 @media (max-width: 599px) { .catalog-page { padding-top: 140px; } }
 
-.catalog-page .sales-full-block { position: absolute; height: 50px; top: 0; z-index: 1000; width: 100%; background: #ffbebe; text-align: center; }
+.catalog-page .sales-full-block { position: absolute; height: 50px; top: 0; z-index: 1000; width: 100%; background: #ffbebe; text-align: center; -webkit-transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
 
 @media (max-width: 599px) { .catalog-page .sales-full-block { display: none; } }
 
@@ -539,11 +549,9 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item { text-align: center; position: relative; background: #fff; min-height: 700px; height: 100vh; }
 
-@media (max-width: 900px) { .brands-page .brand-item { min-height: auto; height: auto; padding-top: 550px; } }
+@media (max-width: 900px) { .brands-page .brand-item { padding-top: 150px; } }
 
-@media (max-width: 599px) { .brands-page .brand-item { padding-top: 150px; } }
-
-@media (max-width: 599px) { .brands-page .brand-item .container-fluid { display: none; } }
+@media (max-width: 900px) { .brands-page .brand-item .container-fluid { display: none; } }
 
 .brands-page .brand-item .row > .col-md-6 { padding-left: 200px; }
 
@@ -555,27 +563,23 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item .slider-brand-box { position: absolute; width: 50%; height: 100vh; right: 0; top: 0; }
 
-@media (max-width: 900px) { .brands-page .brand-item .slider-brand-box { width: 100%; } }
-
-@media (max-width: 599px) { .brands-page .brand-item .slider-brand-box { top: 0px; } }
+@media (max-width: 900px) { .brands-page .brand-item .slider-brand-box { width: 100%; top: 0px; } }
 
 .brands-page .brand-item .slider-brand { list-style: none; padding: 0; margin: 0; }
 
-@media (max-width: 599px) { .brands-page .brand-item .slider-brand { height: 100vh; } }
+@media (max-width: 900px) { .brands-page .brand-item .slider-brand { height: 100vh; } }
 
-@media (max-width: 599px) { .brands-page .brand-item .slider-brand li { height: 100vh; position: relative; } }
+@media (max-width: 900px) { .brands-page .brand-item .slider-brand li { height: 100vh; position: relative; } }
 
 .brands-page .brand-item .slider-brand .pic { height: 100vh; min-height: 500px; background-size: cover; background-position: center; }
 
-@media (max-width: 900px) { .brands-page .brand-item .slider-brand .pic { height: 500px; min-height: 500px; } }
+@media (max-width: 900px) { .brands-page .brand-item .slider-brand .pic { height: 100vh; min-height: 568px; } }
 
-@media (max-width: 599px) { .brands-page .brand-item .slider-brand .pic { height: 100vh; min-height: 568px; } }
-
-@media (max-width: 599px) { .brands-page .brand-item .lSPrev { display: none !important; } }
+@media (max-width: 900px) { .brands-page .brand-item .lSPrev { display: none !important; } }
 
 .brands-page .brand-item .text-content { width: 100%; max-width: 400px; margin: auto; position: relative; z-index: 10000000; }
 
-@media (max-width: 599px) { .brands-page .brand-item .text-content { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); padding: 1em; max-width: 300px; margin: auto; left: 0; right: 0; } }
+@media (max-width: 900px) { .brands-page .brand-item .text-content { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); padding: 1em; max-width: 300px; margin: auto; left: 0; right: 0; } }
 
 .brands-page .brand-item .text-content h4 { font-weight: 300; font-size: 24px; margin: 0; letter-spacing: 1px; }
 
