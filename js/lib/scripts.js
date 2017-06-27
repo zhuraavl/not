@@ -225,12 +225,21 @@ $(document).ready(function () {
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $(".scroll-top").addClass('show');
+      $(".open-filter-mobil").addClass('to-top');
     } else {
       $(".scroll-top").removeClass('show');
+      $(".open-filter-mobil").removeClass('to-top');
     }
   });
 
+  
   $(".scroll-top").click(function () {
+    event.preventDefault();
+    $("html, body").animate({
+      scrollTop: $('body').offset().top
+    }, 1000);
+  });
+  $(".open-filter-mobil").click(function () {
     event.preventDefault();
     $("html, body").animate({
       scrollTop: $('body').offset().top

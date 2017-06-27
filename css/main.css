@@ -200,7 +200,7 @@ footer .copyright p { font-size: 10px; color: #fff; text-transform: uppercase; l
 
 .scroll-top.show { opacity: 1; }
 
-header { position: fixed; padding: 1em 0; top: 0; left: 0; right: 0; background: #fff; z-index: 100; width: 100%; margin: auto; -webkit-transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1); transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
+header { position: fixed; padding: 1em 0; top: 0; left: 0; right: 0; background: #fff; z-index: 1000; width: 100%; margin: auto; -webkit-transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1); transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1); }
 
 header .logo { display: block; font-size: 24px; letter-spacing: 1px; font-family: "Futura PT Demi"; position: relative; z-index: 10; white-space: nowrap; }
 
@@ -383,15 +383,15 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page.have-sales { padding-top: 150px; }
 
-.catalog-page.have-sales header { top: 50px; }
+.catalog-page.have-sales header { padding-top: 60px; -webkit-transition: all .5s; transition: all .5s; }
 
 .catalog-page.have-sales header:after { content: ''; position: absolute; width: 100%; top: -100px; height: 100px; background: #fff; left: 0; right: 0; display: block; }
 
-@media (max-width: 599px) { .catalog-page.have-sales header { top: 0; } }
+@media (max-width: 599px) { .catalog-page.have-sales header { padding-top: 0; } }
 
 .catalog-page.header-top .sales-full-block, .catalog-page.hidden-sales .sales-full-block { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
 
-.catalog-page.header-top header, .catalog-page.hidden-sales header { top: 0; }
+.catalog-page.header-top header, .catalog-page.hidden-sales header { padding-top: 10px; }
 
 .catalog-page.hidden-sales .sales-full-block { display: none; }
 
@@ -403,7 +403,7 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page .sales-full-block button.close-sales { position: absolute; background: transparent; font-size: 28px; color: #000; border: 0; right: 0; top: 5px; }
 
-.catalog-page button.open-filter-mobil { position: absolute; top: 50px; background: #000; height: 55px; width: 100%; color: #fff; border: 0; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; overflow: hidden; display: none; }
+.catalog-page button.open-filter-mobil { position: fixed; top: 50px; background: #000; height: 55px; width: 100%; color: #fff; border: 0; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; overflow: hidden; display: none; z-index: 100; -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
 
 .catalog-page button.open-filter-mobil span { width: 100%; left: 0; position: absolute; top: 25px; -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; }
 
@@ -412,6 +412,8 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 .catalog-page button.open-filter-mobil.show span:first-child { -webkit-transform: translateY(50px); transform: translateY(50px); }
 
 .catalog-page button.open-filter-mobil.show span:last-child { -webkit-transform: translateY(0px); transform: translateY(0px); }
+
+.catalog-page button.open-filter-mobil.to-top { top: -10px; }
 
 @media (max-width: 599px) { .catalog-page button.open-filter-mobil { display: block; } }
 
@@ -462,18 +464,6 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 .catalog-page .drop-filter li input[type=checkbox] + label:after { width: 8px; height: 8px; left: 3px; top: 3px; }
 
 .catalog-page .drop-filter li input:checked + label:after { background: #000; }
-
-.catalog-page .drop-filter .range-slider { text-align: left; margin-left: -.5em; width: 200px; height: 70px; position: relative; }
-
-.catalog-page .drop-filter .range-slider span { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-
-.catalog-page .drop-filter .range-slider input { border: 0; margin: 0 5px; text-align: center; box-shadow: none; opacity: none; }
-
-.catalog-page .drop-filter .range-slider input[type=number] { font-weight: bold; border-bottom: 2px solid #ddd; }
-
-.catalog-page .drop-filter .range-slider input[type=range] { display: none; -moz-appearance: textfield; }
-
-.catalog-page .drop-filter .range-slider svg, .catalog-page .drop-filter .range-slider input[type="range"] { position: absolute; left: 0; bottom: 0; }
 
 .product-page { padding-top: 100px; }
 
@@ -579,7 +569,7 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item .text-content { width: 100%; max-width: 400px; margin: auto; position: relative; z-index: 10000000; }
 
-@media (max-width: 900px) { .brands-page .brand-item .text-content { position: absolute; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); padding: 1em; max-width: 300px; margin: auto; left: 0; right: 0; } }
+@media (max-width: 900px) { .brands-page .brand-item .text-content { position: absolute; top: 40%; -webkit-transform: translateY(-50%); transform: translateY(-50%); padding: 0 1em; max-width: 310px; margin: auto; left: 0; right: 0; } }
 
 .brands-page .brand-item .text-content h4 { font-weight: 300; font-size: 24px; margin: 0; letter-spacing: 1px; }
 
@@ -589,11 +579,15 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item .text-content p { font-size: 16px; }
 
+@media (max-width: 900px) { .brands-page .brand-item .text-content p { font-size: 14px; } }
+
+@media (max-width: 599px) { .brands-page .brand-item .text-content p { font-size: 12px; line-height: 1.5; } }
+
 .brands-page .brand-item .text-content .btn:after { content: ''; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, 0.2); z-index: -1; opacity: 0; visibility: hidden; -webkit-transition: all .3s ease-in-out; transition: all .3s ease-in-out; -webkit-transition-delay: .4s; transition-delay: .4s; }
 
 .brands-page .brand-item .text-content .btn:hover:after { opacity: 1; visibility: visible; }
 
-.brands-page .lSSlideOuter .lSPager.lSpg { bottom: 100px; position: absolute; left: 0; right: 0; width: 100%; z-index: 100; }
+.brands-page .lSSlideOuter .lSPager.lSpg { bottom: 80px; position: absolute; left: 0; right: 0; width: 100%; z-index: 100; }
 
 .brands-page .lSSlideOuter .lSPager.lSpg li a { display: inline; background: transparent; text-decoration: none; overflow: visible; position: relative; }
 

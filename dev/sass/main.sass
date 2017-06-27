@@ -167,9 +167,9 @@ body
   padding-top: 100px
   &.have-sales
     padding-top: 150px
-    @include mobil
     header
-      top: 50px
+      padding-top: 60px
+      transition: all .5s
       &:after
         content: ''
         position: absolute
@@ -180,13 +180,15 @@ body
         left: 0
         right: 0
         display: block
+      
       @include mobil
-        top: 0
+        padding-top: 0
   &.header-top, &.hidden-sales
     .sales-full-block
       transform: translateY(-100%)
     header
-      top: 0
+      padding-top: 10px
+      
   &.hidden-sales
     .sales-full-block
       display: none
@@ -216,7 +218,7 @@ body
       top: 5px
     
   button.open-filter-mobil
-    position: absolute
+    position: fixed
     top: 50px
     background: #000
     height: 55px
@@ -228,6 +230,8 @@ body
     letter-spacing: 1px
     overflow: hidden
     display: none
+    z-index: 100
+    transition: all .3s ease-in-out
     span
       width: 100%
       left: 0
@@ -242,6 +246,8 @@ body
         transform: translateY(50px)
       span:last-child
         transform: translateY(0px)
+    &.to-top
+      top: -10px
       
     @include mobil
       display: block
@@ -364,32 +370,7 @@ body
         &:checked + label:after
           background: #000
         
-    .range-slider
-      text-align: left
-      margin-left: -.5em
-      width: 200px
-      height: 70px
-      position: relative
-      span
-        font-size: 12px
-        letter-spacing: 1px
-        text-transform: uppercase
-      input
-        border: 0
-        margin: 0 5px
-        text-align: center
-        box-shadow: none
-        opacity: none
-        &[type=number]
-          font-weight: bold
-          border-bottom: 2px solid #ddd
-        &[type=range]
-          display: none
-          -moz-appearance: textfield
-      svg, input[type="range"]
-        position: absolute
-        left: 0
-        bottom: 0
+    
           
         
     
@@ -659,10 +640,10 @@ body
       z-index: 10000000
       @include tablet-h
         position: absolute
-        top: 50%
+        top: 40%
         transform: translateY(-50%)
-        padding: 1em
-        max-width: 300px
+        padding: 0 1em
+        max-width: 310px
         margin: auto
         left: 0
         right: 0
@@ -680,6 +661,11 @@ body
         letter-spacing: 1px
       p
         font-size: 16px
+        @include tablet-h
+          font-size: 14px
+        @include mobil
+          font-size: 12px
+          line-height: 1.5
       .btn
         &:after
           content: ''
@@ -702,7 +688,7 @@ body
       
   
   .lSSlideOuter .lSPager.lSpg
-    bottom: 100px
+    bottom: 80px
     position: absolute
     left: 0
     right: 0
