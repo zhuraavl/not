@@ -383,7 +383,13 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .catalog-page { padding-top: 100px; }
 
+.catalog-page .sales-full-block { display: none; }
+
 .catalog-page.have-sales { padding-top: 150px; }
+
+.catalog-page.have-sales .sales-full-block { display: block; }
+
+.catalog-page.have-sales .search-box.show .search-content { -webkit-transform: translateY(50px); transform: translateY(50px); }
 
 .catalog-page.have-sales header { padding-top: 60px; transition: all .5s; }
 
@@ -394,6 +400,8 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 .catalog-page.header-top .sales-full-block, .catalog-page.hidden-sales .sales-full-block { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
 
 .catalog-page.header-top header, .catalog-page.hidden-sales header { padding-top: 10px; }
+
+.catalog-page.header-top .search-box.show .search-content, .catalog-page.hidden-sales .search-box.show .search-content { -webkit-transform: translateY(0px); transform: translateY(0px); }
 
 .catalog-page.hidden-sales .sales-full-block { display: none; }
 

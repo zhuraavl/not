@@ -165,8 +165,14 @@ body
 
 .catalog-page
   padding-top: 100px
+  .sales-full-block
+    display: none
   &.have-sales
     padding-top: 150px
+    .sales-full-block
+      display: block
+    .search-box.show .search-content
+      transform: translateY(50px)
     header
       padding-top: 60px
       transition: all .5s
@@ -180,7 +186,6 @@ body
         left: 0
         right: 0
         display: block
-      
       @include mobil
         padding-top: 0
   &.header-top, &.hidden-sales
@@ -188,6 +193,8 @@ body
       transform: translateY(-100%)
     header
       padding-top: 10px
+    .search-box.show .search-content
+      transform: translateY(0px)
       
   &.hidden-sales
     .sales-full-block

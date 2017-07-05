@@ -252,10 +252,24 @@
     <script>
       $(function() {
         $.scrollify({
-          section: ".brand-item",
-          scrollbars: false,
+          section:".brand-item",
+          scrollbars:false,
           interstitialSection:".brand-links,footer",
-          overflowScroll: false
+          overflowScroll: false,
+          before:function(i,panels) {
+      
+            var ref = panels[i].attr("data-section-name");
+      
+            $(".navigation .active").removeClass("active");
+      
+            $(".navigation").find("a[href=\"#" + ref + "\"]").addClass("active");
+          },
+          afterRender:function() {
+            $(".navigation a").on("click",function(e) {
+              $.scrollify.move($(this).attr("href"));
+            });
+      
+          }
         });
       });
       
