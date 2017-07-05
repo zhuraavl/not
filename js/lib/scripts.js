@@ -44,6 +44,8 @@ $(document).ready(function () {
     $(this).removeClass("show");
     $(".search-input").focus();
     $(".search-box").toggleClass("show");
+    $("body").toggleClass("no-scroll");
+    
   });
   $("button.open-filter-mobil").click(function () {
     $(this).toggleClass("show");
