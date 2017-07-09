@@ -40,6 +40,7 @@ $(document).ready(function () {
 
 
   $(".open-search").click(function () {
+    $("a.open-mobil").removeClass("show");
     $(".mobil-menu").removeClass("open");
     $(this).removeClass("show");
     $(".search-input").focus();
@@ -84,10 +85,10 @@ $(document).ready(function () {
     slideMove: 1,
     slideMargin: 0,
     mode: "slide",
-    speed: 2000,
-    pause: 6500,
+    speed: 1000,
+    pause: 6000,
     useCSS: true,
-    cssEasing: 'cubic-bezier(0.77, 0, 0.175, 1)',
+    cssEasing: 'ease-in-out',
     auto: true,
     loop: true,
     controls: true,
@@ -104,7 +105,7 @@ $(document).ready(function () {
     mode: "slide",
     useCSS: true,
     cssEasing: 'cubic-bezier(0.77, 0, 0.175, 1)',
-    speed: 2000,
+    speed: 1000,
     pause: 5000,
     auto: true,
     loop: true,
@@ -129,7 +130,7 @@ $(document).ready(function () {
     mode: "slide",
     useCSS: true,
     cssEasing: 'cubic-bezier(0.77, 0, 0.175, 1))',
-    speed: 2000,
+    speed: 1000,
     auto: false,
     loop: true,
     controls: true,
@@ -155,6 +156,10 @@ $(document).ready(function () {
   // add elements on mobil to brand
   if ($(window).width() < 900) {} else {
     $(".slider-brand-box li:nth-child(2)").remove();
+  }
+  if ($(window).width() < 600) {
+    $('body').removeClass("have-sales")
+  } else {
   }
 
 

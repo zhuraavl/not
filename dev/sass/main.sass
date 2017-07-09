@@ -37,9 +37,6 @@ body
 // Pages
 
 .main-page
-  
-    
-
   header
     background: #fff
   section
@@ -63,6 +60,9 @@ body
       right: 0
       margin: auto
       color: #fff
+      transform: translateY(100px)
+      opacity: 0
+      transition: all .75s ease-in-out
       @include mobil
         width: 300px
         top: 0
@@ -79,7 +79,7 @@ body
     .lslide
       position: relative
       z-index: 10000
-      @include mobil
+      .info
       &:before
         content: ''
         position: absolute
@@ -109,8 +109,12 @@ body
         transition: all 5s ease-in
         @include mobil
           display: none
-      &.active:after
-        width: 300px
+      &.active
+        .info
+          transform: translateY(0)
+          opacity: 1
+        &:after
+          width: 300px
   .lSPager.lSpg
     position: absolute
     bottom: 150px
@@ -187,7 +191,6 @@ body
         right: 0
         display: block
       @include mobil
-        padding-top: 0
   &.header-top, &.hidden-sales
     .sales-full-block
       transform: translateY(-100%)
@@ -208,7 +211,7 @@ body
     position: absolute
     height: 50px
     top: 0
-    z-index: 1000
+    z-index: 9999
     width: 100%
     background: #ffbebe
     text-align: center
@@ -836,9 +839,12 @@ body
         border-radius: 50px
         
 .about-page
+  @include mobil
+    text-align: center
   main
     padding-top: 100px
     padding-bottom: 150px
+    
     h2
       text-align: center
     .about-other-links
