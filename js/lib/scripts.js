@@ -120,6 +120,8 @@ $(document).ready(function () {
         settings: {
           controls: true,
           auto: false,
+          enableTouch: false,
+          enableDrag: false,
         }
     }
   ]

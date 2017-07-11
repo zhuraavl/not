@@ -44,6 +44,7 @@ body
     height: 100vh
     width: 100%
     overflow: hidden
+    z-index: 100
     ul.main-page-slider
       padding: 0
       margin: 0
@@ -638,9 +639,14 @@ body
         @include tablet-h
           height: 100vh
           min-height: 568px
+    .lSAction
+      a
+        opacity: 1
+    .lSAction > .lSNext
+      right: 10px
     .lSPrev
       @include tablet-h
-        display: none !important
+        left: 10px
         
     .text-content
       width: 100%
@@ -698,12 +704,13 @@ body
       
   
   .lSSlideOuter .lSPager.lSpg
-    bottom: 80px
+    bottom: 20px
     position: absolute
-    left: 0
+    left: 0%
     right: 0
     width: 100%
     z-index: 100
+    
     li
       a
         display: inline

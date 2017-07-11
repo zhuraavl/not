@@ -1,6 +1,34 @@
 a.scroll-top(href="#")
-  img(src="media/images/arrow-top.svg", width="50px", alt="")
-footer
+  span
+  
+  
+footer.new-footer
+  .container-fluid
+    .row
+      .col-md-4.col-xs-12
+        p 
+          | рассылка:
+          input.phone-input-footer(type="text", placeholder="38 (___)___-__-___")
+          button.send-button подписаться
+      .col-md-4.col-xs-12
+        ul
+          li
+            a(href="") О нас
+          li
+            a(href="") бренды
+          li
+            a(href="") каталог
+          li
+            a(href="") журнал
+            
+      .col-md-4.col-xs-12
+        .socil-lnks
+          span следить:
+          a(href="")
+            img(src="media/img-p/icon-i.png", alt="")
+          a(href="")
+            img(src="media/img-p/icon-f.png", alt="")
+//footer
   .container-fluid
     .row
       .col-md-4.col-sm-6.col-xs-12
