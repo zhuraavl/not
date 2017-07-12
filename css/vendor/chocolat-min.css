@@ -143,7 +143,20 @@
   z-index: 100;
   pointer-events: none;
 }
-
+@media (max-width: 599px) {
+  .chocolat-wrapper .chocolat-right {
+    right: 10px;
+  }
+  .chocolat-wrapper .chocolat-right:after {
+    width: 30px;
+  }
+  .chocolat-wrapper .chocolat-left {
+    left: 10px;
+  }
+  .chocolat-wrapper .chocolat-left:after {
+    width: 30px;
+  }
+}
 
 .chocolat-wrapper .chocolat-right.active{
     display: block;

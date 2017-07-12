@@ -124,8 +124,7 @@ body
     left: 0
     @include mobil
       bottom: 25px
-      text-align: right
-      padding-right: 1em
+      text-align: center
     li
       a
         display: inline
@@ -160,8 +159,8 @@ body
   .lSAction > a
     background: trasnparent !important
     color: transprent
-  .lSAction > a:after, .lSAction > a:before
-    background-image: url(../media/images/arroww.svg)
+    @include mobil
+      display: none
   footer, .scroll-top
     display: none
         
@@ -702,7 +701,9 @@ body
     
       
       
-  
+  .lSAction a
+    @include mobil
+      opacity: 0 !important
   .lSSlideOuter .lSPager.lSpg
     bottom: 20px
     position: absolute
@@ -710,7 +711,8 @@ body
     right: 0
     width: 100%
     z-index: 100
-    
+    @include mobil
+      bottom: 85px
     li
       a
         display: inline

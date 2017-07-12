@@ -145,7 +145,7 @@ a { -webkit-tap-highlight-color: transparent; }
 
 .scroll-top { position: fixed; bottom: 4%; right: 3%; z-index: 999; text-align: center; color: #999; text-decoration: none; opacity: 0; transition: all .3s ease; }
 
-@media (max-width: 599px) { .scroll-top { width: 30px; right: 0; bottom: 0px; } }
+@media (max-width: 599px) { .scroll-top { width: 20px; right: 0; bottom: 0px; } }
 
 .scroll-top span { display: block; position: relative; width: 5px; height: 50px; }
 
@@ -300,6 +300,8 @@ header.nav-up { top: -100px; }
 
 .product-item .lSAction > a { z-index: 100000; }
 
+@media (max-width: 599px) { .product-item .lSAction > a { opacity: 0 !important; } }
+
 .product-item .lSAction > a, .product-item ul.lSPager.lSpg { opacity: 0; -webkit-transform: translateY(50px); transform: translateY(50px); transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
 
 @media (max-width: 599px) { .product-item .lSAction > a, .product-item ul.lSPager.lSpg { opacity: .5; -webkit-transform: translateY(0px); transform: translateY(0px); } }
@@ -360,7 +362,7 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .main-page .lSPager.lSpg { position: absolute; bottom: 150px; text-align: center; width: 100%; left: 0; }
 
-@media (max-width: 599px) { .main-page .lSPager.lSpg { bottom: 25px; text-align: right; padding-right: 1em; } }
+@media (max-width: 599px) { .main-page .lSPager.lSpg { bottom: 25px; text-align: center; } }
 
 .main-page .lSPager.lSpg li a { display: inline; background: transparent; text-decoration: none; overflow: visible; position: relative; color: #fff; }
 
@@ -374,7 +376,7 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .main-page .lSAction > a { background: trasnparent !important; color: transprent; }
 
-.main-page .lSAction > a:after, .main-page .lSAction > a:before { background-image: url(../media/images/arroww.svg); }
+@media (max-width: 599px) { .main-page .lSAction > a { display: none; } }
 
 .main-page footer, .main-page .scroll-top { display: none; }
 
@@ -596,7 +598,11 @@ body { font-size: 14px; font-family: "Futura PT Book"; }
 
 .brands-page .brand-item .text-content .btn:hover:after { opacity: 1; visibility: visible; }
 
+@media (max-width: 599px) { .brands-page .lSAction a { opacity: 0 !important; } }
+
 .brands-page .lSSlideOuter .lSPager.lSpg { bottom: 20px; position: absolute; left: 0%; right: 0; width: 100%; z-index: 100; }
+
+@media (max-width: 599px) { .brands-page .lSSlideOuter .lSPager.lSpg { bottom: 85px; } }
 
 .brands-page .lSSlideOuter .lSPager.lSpg li a { display: inline; background: transparent; text-decoration: none; overflow: visible; position: relative; }
 

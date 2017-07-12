@@ -173,9 +173,11 @@
 .lSAction > .lSPrev {
   left: 50px;
 }
+
 .lSAction > .lSNext {
   right: 50px;
 }
+
 .lSAction > a:after {
   content: '';
   position: absolute;
